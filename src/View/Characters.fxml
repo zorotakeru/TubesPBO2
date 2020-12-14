@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Characters">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerChar">
    <children>
       <Label layoutX="176.0" layoutY="27.0" text="YOUR CHARACTERS">
          <font>
@@ -23,7 +22,7 @@
             <TableColumn fx:id="colTotalMonsters" prefWidth="127.20001220703125" text="Total Monsters" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnBack" text="Back" />
-      <Button layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnAddChar" prefHeight="26.0" prefWidth="472.0" text="Add Character" />
+      <Button fx:id="btnBack" layoutX="545.0" layoutY="361.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddChar" prefHeight="26.0" prefWidth="472.0" text="Add Character" />
    </children>
 </AnchorPane>

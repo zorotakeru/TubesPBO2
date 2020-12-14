@@ -4,13 +4,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Menu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenu">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="145.0" layoutY="56.0" mnemonicParsing="false" onAction="#actPlay" prefHeight="26.0" prefWidth="309.0" text="PLAY" />
       <Button layoutX="144.0" layoutY="158.0" mnemonicParsing="false" onAction="#actListMons" prefHeight="26.0" prefWidth="310.0" text="Monsters" />
       <Button layoutX="145.0" layoutY="107.0" mnemonicParsing="false" onAction="#actListChar" prefHeight="26.0" prefWidth="310.0" text="Characters" />
-      <Button layoutX="144.0" layoutY="307.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" text="Exit" />
+      <Button fx:id="btnExit" layoutX="144.0" layoutY="307.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" text="Exit" />
       <Button layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#actLogFile" text="Log File" />
    </children>
 </AnchorPane>

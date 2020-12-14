@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.StFace">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerFace">
    <children>
       <Label layoutX="94.0" layoutY="26.0" text="CHOOSE YOUR CHARACTER">
          <font>
@@ -32,7 +31,7 @@
       </Button>
       <Label layoutX="171.0" layoutY="117.0" prefHeight="18.0" prefWidth="102.0" text="Available Monsters" />
       <Label layoutX="386.0" layoutY="117.0" text="READY TO FIGHT?" />
-      <Button layoutX="14.0" layoutY="358.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button fx:id="btnBack" layoutX="545.0" layoutY="358.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
       <ImageView fitHeight="162.0" fitWidth="144.0" layoutX="362.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
