@@ -28,7 +28,6 @@ public class DaoCharacter implements DaoInterface<Characters>{
                 int point = result.getInt("user.Point");
                 int level = result.getInt("user.Level");
                 int mCount = result.getInt("totalMonster");
-                System.out.println(mCount);
                 Characters ch = new Characters(nameUser,point,level,mCount);
                 Characters cha = new Characters(idChar,ch);
                 chList.add(cha);
