@@ -1,5 +1,7 @@
 package Model;
 
+import javafx.collections.ObservableList;
+
 public class Characters {
     private int idChar;
     private String nameUser;

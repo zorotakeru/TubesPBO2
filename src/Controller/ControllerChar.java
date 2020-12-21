@@ -1,11 +1,13 @@
 package Controller;
 
 import DAO.DaoCharacter;
+import Model.Characters;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -37,7 +39,20 @@ public class ControllerChar {
     }
 
     public void actAddChar(ActionEvent actionEvent) {
+        DaoCharacter daochar = new DaoCharacter();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Add Character");
+        dialog.setHeaderText("Confirmation");
+        dialog.setContentText("Enter your name");
+        dialog.showAndWait();
+        if (!dialog.getResult().equals("")) {
+            int result = daochar.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
+            if (result != 0){
+                System.out.println("Insert Club Berhasil");
+            }
+            ObservableList<Characters> cList = daochar.showData();
+            ClubView.setItems(cList);
+        }
     }
-
 
 }

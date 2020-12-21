@@ -42,4 +42,9 @@ public class DaoMonster implements DaoInterface{
         }
         return monsList;
     }
+
+    @Override
+    public int addData(Object data) {
+        return 0;
+    }
 }
