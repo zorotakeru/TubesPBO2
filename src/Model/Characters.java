@@ -3,27 +3,23 @@ package Model;
 public class Characters {
     private int idChar;
     private String nameUser;
-    private int Point;
-    private int Level;
-    private int TotalMonster;
+    private int point;
+    private int level;
+    private int totalMonster;
 
-    public Characters(int idChar, String nameUser, int Point, int Level, int TotalMonster) {
-        this.idChar = idChar;
+    public Characters(String nameUser, int point, int level, int totalMonster) {
         this.nameUser = nameUser;
-        this.Point = Point;
-        this.Level = Level;
-        this.TotalMonster = TotalMonster;
+        this.point = point;
+        this.level = level;
+        this.totalMonster = totalMonster;
     }
 
-    public Characters() {
-
-    }
-
-    public Characters(int idChar, String nameUser, int point, int level) {
-        this.idChar = idChar;
-        this.nameUser = nameUser;
-        this.Point = point;
-        this.Level = level;
+    public Characters(int idChar, Characters characters){
+        this.setIdChar(idChar);
+        this.setNameUser(characters.getNameUser());
+        this.setPoint(characters.getPoint());
+        this.setLevel(characters.getLevel());
+        this.setTotalMonster(characters.getTotalMonster());
     }
 
 
@@ -44,37 +40,31 @@ public class Characters {
     }
 
     public int getPoint() {
-        return Point;
+        return point;
     }
 
     public void setPoint(int point) {
-        Point = point;
+        this.point = point;
     }
 
     public int getLevel() {
-        return Level;
+        return level;
     }
 
     public void setLevel(int level) {
-        Level = level;
+        this.level = level;
     }
 
     public int getTotalMonster() {
-        return TotalMonster;
+        return totalMonster;
     }
 
     public void setTotalMonster(int totalMonster) {
-        TotalMonster = totalMonster;
+        this.totalMonster = totalMonster;
     }
 
     @Override
     public String toString() {
-        return "Characters{" +
-                "idChar=" + idChar +
-                ", nameUser='" + nameUser + '\'' +
-                ", Point=" + Point +
-                ", Level=" + Level +
-                ", TotalMonster=" + TotalMonster +
-                '}';
+        return nameUser;
     }
 }
