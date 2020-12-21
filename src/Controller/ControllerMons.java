@@ -40,7 +40,6 @@ public class ControllerMons {
         colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
         colSkill1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill1"));
         colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
-        System.out.println(monList);
 
     }
 
@@ -50,5 +49,6 @@ public class ControllerMons {
     }
 
     public void actAddMons(ActionEvent actionEvent) {
+
     }
 }
