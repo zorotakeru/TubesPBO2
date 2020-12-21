@@ -1,4 +1,7 @@
 package DAO;
 
-public class DaoInterface<E> {
+import java.util.List;
+
+public interface DaoInterface<E> {
+    public List<E> showData();
 }
