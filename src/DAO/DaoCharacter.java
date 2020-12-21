@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.awt.*;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,5 +38,29 @@ public class DaoCharacter implements DaoInterface{
             System.out.println(exception.getMessage());
         }
         return chList;
+    }
+
+    @Override
+    public int addData(Characters data) {
+        int result = 0;
+        try {
+            String query = "INSERT INTO user (nameUser) VALUES (?)";
+            Connection conn = JDBCConnection.getConnection();
+            conn.setAutoCommit(false);
+            PreparedStatement statement;
+            statement = conn.prepareStatement(query);
+            statement.setString(1, data.getNameUser());
+            result = statement.executeUpdate();
+            if(result != 0){
+                conn.commit();
+            }
+            else {
+                conn.rollback();
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        }
+        return result;
     }
 }
