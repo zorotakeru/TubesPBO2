@@ -2,31 +2,42 @@ package Model;
 
 public class Monsters {
     private int idMonster;
+    private String nameMonster;
     private int hpMonster;
     private int manaMonster;
     private int attMonster;
     private int defMonster;
-    private String UserId;
-    private String EleId1;
-    private String EleId2;
-    private String nameMonster;
+    private String userName;
+    private String elementName1;
+    private String elementName2;
     private String skill1;
     private String skill2;
 
-    public Monsters(int id, String name, int hpmonsters, int mana, int att, int deff, String skill1, String skill2, String owner) {
-        this.idMonster = id;
-        this.nameMonster = name;
-        this.hpMonster = hpmonsters;
-        this.manaMonster = mana;
-        this.attMonster = att;
-        this.defMonster = deff;
+    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster, String userName, String elementName1, String elementName2, String skill1, String skill2) {
+        this.nameMonster = nameMonster;
+        this.hpMonster = hpMonster;
+        this.manaMonster = manaMonster;
+        this.attMonster = attMonster;
+        this.defMonster = defMonster;
+        this.userName = userName;
+        this.elementName1 = elementName1;
+        this.elementName2 = elementName2;
         this.skill1 = skill1;
         this.skill2 = skill2;
-        this.setUserId(owner);
     }
 
-    public  Monsters(){
-
+        public Monsters(int idMonster, Monsters monsters) {
+        this.setIdMonster(idMonster);
+        this.setNameMonster(monsters.getNameMonster());
+        this.setHpMonster(monsters.getHpMonster());
+        this.setManaMonster(monsters.getManaMonster());
+        this.setAttMonster(monsters.getAttMonster());
+        this.setDefMonster(monsters.getDefMonster());
+        this.setUserName(monsters.getUserName());
+        this.setElementName1(monsters.getElementName1());
+        this.setElementName2(monsters.getElementName2());
+        this.setSkill1(monsters.getSkill1());
+        this.setSkill2(monsters.getSkill2());
     }
 
     public int getIdMonster() {
@@ -35,6 +46,14 @@ public class Monsters {
 
     public void setIdMonster(int idMonster) {
         this.idMonster = idMonster;
+    }
+
+    public String getNameMonster() {
+        return nameMonster;
+    }
+
+    public void setNameMonster(String nameMonster) {
+        this.nameMonster = nameMonster;
     }
 
     public int getHpMonster() {
@@ -69,16 +88,28 @@ public class Monsters {
         this.defMonster = defMonster;
     }
 
-
-
-
-
-    public String getNameMonster() {
-        return nameMonster;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setNameMonster(String nameMonster) {
-        this.nameMonster = nameMonster;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getElementName1() {
+        return elementName1;
+    }
+
+    public void setElementName1(String elementName1) {
+        this.elementName1 = elementName1;
+    }
+
+    public String getElementName2() {
+        return elementName2;
+    }
+
+    public void setElementName2(String elementName2) {
+        this.elementName2 = elementName2;
     }
 
     public String getSkill1() {
@@ -97,44 +128,7 @@ public class Monsters {
         this.skill2 = skill2;
     }
 
-    @Override
-    public String toString() {
-        return "Monsters{" +
-                "idMonster=" + idMonster +
-                ", hpMonster=" + hpMonster +
-                ", manaMonster=" + manaMonster +
-                ", attMonster=" + attMonster +
-                ", defMonster=" + defMonster +
-                ", UserId=" + getUserId() +
-                ", EleId1=" + getEleId1() +
-                ", EleId2=" + getEleId2() +
-                ", nameMonster='" + nameMonster + '\'' +
-                ", skill1='" + skill1 + '\'' +
-                ", skill2='" + skill2 + '\'' +
-                '}';
-    }
 
-    public String getUserId() {
-        return UserId;
-    }
 
-    public void setUserId(String userId) {
-        UserId = userId;
-    }
 
-    public String getEleId1() {
-        return EleId1;
-    }
-
-    public void setEleId1(String eleId1) {
-        EleId1 = eleId1;
-    }
-
-    public String getEleId2() {
-        return EleId2;
-    }
-
-    public void setEleId2(String eleId2) {
-        EleId2 = eleId2;
-    }
 }

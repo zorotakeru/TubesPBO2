@@ -16,21 +16,24 @@ public class DaoMonster implements DaoInterface{
     public ObservableList<Monsters> showData() {
         ObservableList<Monsters> monsList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff', monster.skill1Monster AS 'skill1', monster.skill2Monster AS 'skill2', user.nameUser AS 'owner'FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element ON monster.Element_idElement1 = element.idElement JOIN element ON monster.Element_idElement2 = element.idElement";
+            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff', monster.skill1Monster AS 'skill1', monster.skill2Monster AS 'skill2', user.nameUser AS 'owner', e1.nameElement AS 'element1', e2.nameElement AS 'element2' FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element e1 ON monster.Element_idElement1 = e1.idElement JOIN element e2 ON monster.Element_idElement2 = e2.idElement";
             PreparedStatement statement;
             statement = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet result= statement.executeQuery();
             while (result.next()){
-                int id = result.getInt("monsters.idMonster");
-                String name = result.getString("monster.nameMonster");
-                int hpmonsters = result.getInt("monster.hpMonster");
-                int mana = result.getInt("monster.manaMonster");
-                int att = result.getInt("monster.attackMonster");
-                int deff = result.getInt("monster.deffendMonster");
-                String skill1 = result.getString("monster.skill1Monster");
-                String skill2 = result.getString("monster.skill2Monster");
-                String owner = result.getString("user.nameUser");
-                Monsters mon = new Monsters(id, name, hpmonsters, mana, att, deff, skill1, skill2, owner);
+                int id = result.getInt("id");
+                String name = result.getString("name");
+                int hpmonsters = result.getInt("hpmonsters");
+                int mana = result.getInt("mana");
+                int att = result.getInt("att");
+                int deff = result.getInt("deff");
+                String owner = result.getString("owner");
+                String element1 = result.getString("element1");
+                String element2 = result.getString("element2");
+                String skill1 = result.getString("skill1");
+                String skill2 = result.getString("skill2");
+                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,owner,element1,element2,skill1,skill2);
+                Monsters mon = new Monsters(id,mo);
                 monsList.add(mon);
             }
         }

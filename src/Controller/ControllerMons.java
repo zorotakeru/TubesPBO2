@@ -12,19 +12,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class ControllerMons {
-    public TableView tblMons;
-    public TableColumn colmMonsName;
-    public TableColumn colElementPri;
-    public TableColumn colElementSec;
-    public TableColumn colHP;
-    public TableColumn colMana;
-    public TableColumn colAtk;
-    public TableColumn colDef;
-    public TableColumn colSkill1;
-    public TableColumn colSkill2;
-    public TableColumn colSkillPsv;
-    public TableColumn colSkillUlt;
-    public TableColumn colOwner;
+    public TableView<Monsters> tblMons;
+    public TableColumn<Monsters, String> colmMonsName;
+    public TableColumn<Monsters, String> colElementPri;
+    public TableColumn<Monsters, String> colElementSec;
+    public TableColumn<Monsters, String> colHP;
+    public TableColumn<Monsters, String> colMana;
+    public TableColumn<Monsters, String> colAtk;
+    public TableColumn<Monsters, String> colDef;
+    public TableColumn<Monsters, String> colSkill1;
+    public TableColumn<Monsters, String> colSkill2;
+    public TableColumn<Monsters, String> colOwner;
     public Button btnBack;
     ObservableList<Monsters> monList;
 
@@ -33,13 +31,17 @@ public class ControllerMons {
         monList = daoMonster.showData();
         tblMons.setItems(monList);
         colmMonsName.setCellValueFactory(new PropertyValueFactory<Monsters, String>("nameMonster"));
-        colHP.setCellValueFactory(new PropertyValueFactory<Character, String>("hpMonster"));
-        colMana.setCellValueFactory(new PropertyValueFactory<Character, String>("manaMonster"));
-        colAtk.setCellValueFactory(new PropertyValueFactory<Character, String>("attackMonster"));
-        colDef.setCellValueFactory(new PropertyValueFactory<Character, String>("deffendMonster"));
-        colSkill1.setCellValueFactory(new PropertyValueFactory<Character, String>("skill1Monster"));
-        colSkill2.setCellValueFactory(new PropertyValueFactory<Character, String>("skill1Monster"));
-        colOwner.setCellValueFactory(new PropertyValueFactory<Character, String>("User_idUser"));
+        colHP.setCellValueFactory(new PropertyValueFactory<Monsters, String>("hpMonster"));
+        colMana.setCellValueFactory(new PropertyValueFactory<Monsters, String>("manaMonster"));
+        colAtk.setCellValueFactory(new PropertyValueFactory<Monsters, String>("attMonster"));
+        colDef.setCellValueFactory(new PropertyValueFactory<Monsters, String>("defMonster"));
+        colOwner.setCellValueFactory(new PropertyValueFactory<Monsters, String>("userName"));
+        colElementPri.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName1"));
+        colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
+        colSkill1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill1"));
+        colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
+        System.out.println(monList);
+
     }
 
     public void actBack(ActionEvent actionEvent) {
