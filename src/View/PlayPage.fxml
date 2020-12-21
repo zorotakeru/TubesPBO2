@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PlayPage">
+   <children>
+      <Label alignment="CENTER" layoutX="234.0" layoutY="14.0" prefHeight="38.0" prefWidth="272.0" text="LET THE BATTLE BEGIN!">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="34.0" layoutY="270.0" prefHeight="200.0" prefWidth="668.0" />
+      <Button layoutX="82.0" layoutY="483.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="Attack" />
+      <Button layoutX="234.0" layoutY="483.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="Defend" />
+      <Button layoutX="379.0" layoutY="483.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="Skill 1" />
+      <Button layoutX="538.0" layoutY="483.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="115.0" text="Skill 2" />
+      <TextField layoutX="436.0" layoutY="56.0" />
+      <TableView layoutX="34.0" layoutY="60.0" prefHeight="200.0" prefWidth="72.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Player" />
+        </columns>
+      </TableView>
+      <TableView layoutX="180.0" layoutY="60.0" prefHeight="200.0" prefWidth="72.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="COM" />
+         </columns>
+      </TableView>
+      <Label layoutX="292.0" layoutY="60.0" prefHeight="17.0" prefWidth="106.0" text="Player Squad HP" />
+      <Label layoutX="291.0" layoutY="92.0" prefHeight="17.0" prefWidth="106.0" text="Player Squad Attack" />
+      <Label layoutX="291.0" layoutY="128.0" prefHeight="18.0" prefWidth="115.0" text="Player Squad Deffend" />
+      <TextField layoutX="436.0" layoutY="88.0" />
+      <TextField layoutX="436.0" layoutY="125.0" />
+      <TextField layoutX="435.0" layoutY="165.0" />
+      <Label layoutX="291.0" layoutY="169.0" prefHeight="17.0" prefWidth="106.0" text="COM Squad HP" />
+      <Label layoutX="290.0" layoutY="201.0" prefHeight="17.0" prefWidth="106.0" text="COM Squad Attack" />
+      <Label layoutX="290.0" layoutY="237.0" prefHeight="18.0" prefWidth="115.0" text="COM Squad Deffend" />
+      <TextField layoutX="435.0" layoutY="197.0" />
+      <TextField layoutX="435.0" layoutY="234.0" />
+   </children>
+</AnchorPane>
