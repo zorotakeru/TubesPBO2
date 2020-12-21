@@ -12,13 +12,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class ControllerChar {
-    public TableView<Character> tblChar;
-    public TableColumn<Character, String> colCharName;
-    public TableColumn<Character, String> colCharLevel;
-    public TableColumn<Character, String> colCharXP;
-    public TableColumn<Character, String> colTotalMonsters;
+    public TableView<Characters> tblChar;
+    public TableColumn<Characters, String> colCharName;
+    public TableColumn<Characters, String> colCharLevel;
+    public TableColumn<Characters, String> colCharXP;
+    public TableColumn<Characters, String> colTotalMonsters;
     public Button btnBack;
-    ObservableList<Character> cList;
+    ObservableList<Characters> cList;
 
 
 
@@ -26,10 +26,10 @@ public class ControllerChar {
         DaoCharacter daoCharacter = new DaoCharacter();
         cList=daoCharacter.showData();
         tblChar.setItems(cList);
-        colCharName.setCellValueFactory(new PropertyValueFactory<Character, String>("nameUser"));
-        colCharLevel.setCellValueFactory(new PropertyValueFactory<Character, String>("level"));
-        colCharXP.setCellValueFactory(new PropertyValueFactory<Character, String>("point"));
-        colTotalMonsters.setCellValueFactory(new PropertyValueFactory<Character, String>("totalMonster"));
+        colCharName.setCellValueFactory(new PropertyValueFactory<Characters, String>("nameUser"));
+        colCharLevel.setCellValueFactory(new PropertyValueFactory<Characters, String>("level"));
+        colCharXP.setCellValueFactory(new PropertyValueFactory<Characters, String>("point"));
+        colTotalMonsters.setCellValueFactory(new PropertyValueFactory<Characters, String>("totalMonster"));
 
     }
 
@@ -39,19 +39,19 @@ public class ControllerChar {
     }
 
     public void actAddChar(ActionEvent actionEvent) {
-        DaoCharacter daochar = new DaoCharacter();
+        DaoCharacter daoCharacter = new DaoCharacter();
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Add Character");
         dialog.setHeaderText("Confirmation");
         dialog.setContentText("Enter your name");
         dialog.showAndWait();
-        if (!dialog.getResult().equals("")) {
-            int result = daochar.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
+        if (!dialog.getResult().equals("")&&dialog.getResult()!=null) {
+            int result = daoCharacter.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
             if (result != 0){
                 System.out.println("Insert Club Berhasil");
             }
-            ObservableList<Characters> cList = daochar.showData();
-            ClubView.setItems(cList);
+            ObservableList<Characters> cList = daoCharacter.showData();
+            tblChar.setItems(cList);
         }
     }
 
