@@ -21,4 +21,6 @@ public class ControllerChar {
 
     public void actAddChar(ActionEvent actionEvent) {
     }
+
+
 }
