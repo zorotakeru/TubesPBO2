@@ -48,7 +48,7 @@ public class ControllerChar {
         if (!dialog.getResult().equals("")&&dialog.getResult()!=null) {
             int result = daoCharacter.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
             if (result != 0){
-                System.out.println("Insert Club Berhasil");
+                System.out.println("Insert Character Berhasil");
             }
             ObservableList<Characters> cList = daoCharacter.showData();
             tblChar.setItems(cList);
