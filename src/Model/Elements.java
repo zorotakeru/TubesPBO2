@@ -1,10 +1,10 @@
 package Model;
 
-public class Element {
+public class Elements {
     private int idElement;
     private String nameElement;
 
-    public Element(int idElement, String nameElement){
+    public Elements(int idElement, String nameElement){
         this.idElement = idElement;
         this.nameElement = nameElement;
     }

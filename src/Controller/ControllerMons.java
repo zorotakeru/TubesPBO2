@@ -58,7 +58,7 @@ public class ControllerMons {
         dialog.setContentText("Enter your monster name");
         dialog.showAndWait();
         if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
-            int result = daoMonster.addData(new Monsters(dialog.getEditor().getText(),0,0,0,0,"","","",""));
+            int result = daoMonster.addData(new Monsters(dialog.getEditor().getText(),0,0,0,0,"","","","",""));
             if (result != 0){
                 System.out.println("Insert Character Berhasil");
             }

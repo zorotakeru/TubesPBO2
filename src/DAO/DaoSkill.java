@@ -25,8 +25,8 @@ public class DaoSkill implements DaoInterface<Skills> {
                 int idSkill = result.getInt("id");
                 String skillname = result.getString("skillname");
                 int elementmastery = result.getInt("elemastery");
-                int element = result.getInt("element");
-                Skills sk = new Skills(idSkill,skillname,elementmastery,element);
+                String element = result.getString("element");
+                Skills sk = new Skills(skillname,elementmastery,element);
                 Skills ski = new Skills(idSkill,sk);
                 skList.add(ski);
             }

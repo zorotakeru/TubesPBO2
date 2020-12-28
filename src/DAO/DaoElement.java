@@ -1,18 +1,39 @@
 package DAO;
 
-import Model.Element;
+import Model.Elements;
+import Model.Skills;
+import Utility.JDBCConnection;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.List;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class DaoElement implements DaoInterface<Element> {
+public class DaoElement implements DaoInterface<Elements> {
     @Override
     public ObservableList showData() {
-        return null;
+        ObservableList<Elements> skList = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT element.idElement AS 'id' ,element.nameElement AS 'elementname' FROM element";
+            PreparedStatement statement;
+            statement = JDBCConnection.getConnection().prepareStatement(query);
+            ResultSet result= statement.executeQuery();
+            while (result.next()){
+                int idElement = result.getInt("id");
+                String elementName = result.getString("elementname");
+                Elements elem = new Elements(idElement, elementName);
+                skList.add(elem);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception.getMessage());
+        }
+        return skList;
     }
 
     @Override
-    public int addData(Element data) {
+    public int addData(Elements data) {
 
         return 0;
     }
