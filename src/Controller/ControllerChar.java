@@ -45,7 +45,7 @@ public class ControllerChar {
         dialog.setHeaderText("Confirmation");
         dialog.setContentText("Enter your name");
         dialog.showAndWait();
-        if (!dialog.getResult().equals("")&&dialog.getResult()!=null) {
+        if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
             int result = daoCharacter.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
             if (result != 0){
                 System.out.println("Insert Character Berhasil");
