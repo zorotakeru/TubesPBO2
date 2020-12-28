@@ -26,7 +26,7 @@ public class ControllerFace {
     public TableColumn <Monsters,String> colElementPri;
     public TableColumn <Monsters,String> colElemetSec;
     public Button btnBack;
-
+    public ObservableList<Monsters> monList;
     public void initialize(){
         DaoCharacter cDao = new DaoCharacter();
         ObservableList<Characters> cList = cDao.showData();
@@ -35,10 +35,16 @@ public class ControllerFace {
 
     public void actFight(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../View/PlayPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../View/2ndFace.fxml"));
         Parent root = loader.load();
-        stage.setTitle("Battling Foe");
+        stage.setTitle("Choosing monsters");
         stage.setScene(new Scene(root));
+        ControllerFace2 cf2 =loader.getController();
+
+        cf2.comboM1.setItems(monList);
+        cf2.comboM2.setItems(monList);
+        cf2.comboM3.setItems(monList);
+
         stage.showAndWait();
     }
 
@@ -48,7 +54,7 @@ public class ControllerFace {
     }
 
     public void actCmbChar(ActionEvent actionEvent) {
-        ObservableList<Monsters> monList;
+
         DaoMonster daoMonster = new DaoMonster();
 
         monList = daoMonster.showDetail(comboCharacter.getSelectionModel().getSelectedItem().getIdChar());

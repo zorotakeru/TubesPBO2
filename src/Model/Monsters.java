@@ -26,7 +26,7 @@ public class Monsters {
         this.skill2 = skill2;
     }
 
-        public Monsters(int idMonster, Monsters monsters) {
+    public Monsters(int idMonster, Monsters monsters) {
         this.setIdMonster(idMonster);
         this.setNameMonster(monsters.getNameMonster());
         this.setHpMonster(monsters.getHpMonster());
@@ -41,6 +41,19 @@ public class Monsters {
     }
 
 
+    public Monsters(Monsters monsters){
+        this.setIdMonster(monsters.getIdMonster());
+        this.setNameMonster(monsters.getNameMonster());
+        this.setHpMonster(monsters.getHpMonster());
+        this.setManaMonster(monsters.getManaMonster());
+        this.setAttMonster(monsters.getAttMonster());
+        this.setDefMonster(monsters.getDefMonster());
+        this.setUserName(monsters.getUserName());
+        this.setElementName1(monsters.getElementName1());
+        this.setElementName2(monsters.getElementName2());
+        this.setSkill1(monsters.getSkill1());
+        this.setSkill2(monsters.getSkill2());
+    }
 
     public int getIdMonster() {
         return idMonster;
@@ -131,6 +144,8 @@ public class Monsters {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return nameMonster;
+    }
 }
