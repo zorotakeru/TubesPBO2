@@ -14,7 +14,9 @@ import java.util.List;
 public class DaoSkill implements DaoInterface<Skills> {
 
     @Override
+
     public ObservableList<Skills> showData() {
+
         ObservableList<Skills> skList = FXCollections.observableArrayList();
         try {
             String query = "SELECT skill.idSkill AS 'id' ,skill.skillName AS 'skillname', skill.elementalMastery AS 'elemastery', ele.nameElement AS 'element' FROM skill JOIN element ele ON skill.Element_idElement = ele.idElement";

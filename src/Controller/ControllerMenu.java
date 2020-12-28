@@ -46,5 +46,6 @@ public class ControllerMenu {
     }
 
     public void actLogFile(ActionEvent actionEvent) {
+
     }
 }

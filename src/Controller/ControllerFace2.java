@@ -26,6 +26,7 @@ public class ControllerFace2 {
     public void initialize(){
         comboM2.setDisable(true);
         comboM3.setDisable(true);
+
     }
 
     public void actfight(ActionEvent actionEvent) throws IOException {
