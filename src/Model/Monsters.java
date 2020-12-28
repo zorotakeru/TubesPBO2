@@ -40,6 +40,8 @@ public class Monsters {
         this.setSkill2(monsters.getSkill2());
     }
 
+
+
     public int getIdMonster() {
         return idMonster;
     }

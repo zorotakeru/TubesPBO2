@@ -2,12 +2,14 @@ package Controller;
 
 import DAO.DaoCharacter;
 import DAO.DaoMonster;
+import Model.Characters;
 import Model.Monsters;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -49,6 +51,19 @@ public class ControllerMons {
     }
 
     public void actAddMons(ActionEvent actionEvent) {
-
+        DaoMonster daoMonster = new DaoMonster();
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Add Monster");
+        dialog.setHeaderText("Confirmation");
+        dialog.setContentText("Enter your monster name");
+        dialog.showAndWait();
+        if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
+            int result = daoMonster.addData(new Monsters(dialog.getEditor().getText(),0,0,0,0,"","","",""));
+            if (result != 0){
+                System.out.println("Insert Character Berhasil");
+            }
+            ObservableList<Monsters> mList = daoMonster.showData();
+            tblMons.setItems(mList);
+        }
     }
 }
