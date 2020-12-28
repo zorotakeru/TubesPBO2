@@ -61,6 +61,4 @@ public class ControllerFace2 {
         comboM3.setDisable(true);
         System.out.println(mList);
     }
-
-
 }

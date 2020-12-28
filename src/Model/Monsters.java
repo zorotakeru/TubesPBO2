@@ -40,6 +40,7 @@ public class Monsters {
         this.setSkill2(monsters.getSkill2());
     }
 
+
     public Monsters(Monsters monsters){
         this.setIdMonster(monsters.getIdMonster());
         this.setNameMonster(monsters.getNameMonster());
