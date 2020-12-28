@@ -19,9 +19,6 @@ public class Skills {
         this.setElement(skills.getElement());
     }
 
-    public Skills(int idSkill, String skillname, int elementmastery, int element) {
-    }
-
 
     public int getIdSkills() {
         return idSkills;
