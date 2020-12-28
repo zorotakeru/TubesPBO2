@@ -1,20 +1,25 @@
 package DAO;
 
+import Model.Element;
+import javafx.collections.ObservableList;
+
 import java.util.List;
 
-public class DaoElement implements DaoInterface {
+public class DaoElement implements DaoInterface<Element> {
     @Override
-    public List showData() {
+    public ObservableList showData() {
         return null;
     }
 
     @Override
-    public int addData(Object data) {
+    public int addData(Element data) {
+
         return 0;
     }
 
     @Override
-    public List showDetail(int data) {
+    public ObservableList showDetail(int data) {
+
         return null;
     }
 }
