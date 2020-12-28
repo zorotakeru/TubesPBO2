@@ -64,4 +64,9 @@ public class DaoCharacter implements DaoInterface<Characters>{
         }
         return result;
     }
+
+    @Override
+    public List<Characters> showDetail(int data) {
+        return null;
+    }
 }

@@ -12,4 +12,9 @@ public class DaoElement implements DaoInterface {
     public int addData(Object data) {
         return 0;
     }
+
+    @Override
+    public List showDetail(int data) {
+        return null;
+    }
 }
