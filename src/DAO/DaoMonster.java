@@ -9,10 +9,10 @@ import javafx.collections.ObservableList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 
-public class DaoMonster implements DaoInterface{
+
+public class DaoMonster implements DaoInterface<Monsters>{
     @Override
     public ObservableList<Monsters> showData() {
         ObservableList<Monsters> monsList = FXCollections.observableArrayList();
@@ -29,12 +29,13 @@ public class DaoMonster implements DaoInterface{
                 int mana = result.getInt("mana");
                 int att = result.getInt("att");
                 int deff = result.getInt("deff");
+                int idUser = result.getInt("idUser");
                 String owner = result.getString("owner");
                 String element1 = result.getString("element1");
                 String element2 = result.getString("element2");
                 String skill1 = result.getString("skill1");
                 String skill2 = result.getString("skill2");
-                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,owner,element1,element2,skill1,skill2);
+                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2);
                 Monsters mon = new Monsters(id,mo);
                 monsList.add(mon);
             }
@@ -46,12 +47,7 @@ public class DaoMonster implements DaoInterface{
     }
 
     @Override
-    public int addData(Object data) {
-        return 0;
-    }
-
-    @Override
-    public int addData(Object data) {
+    public int addData(Monsters data) {
         return 0;
     }
 
