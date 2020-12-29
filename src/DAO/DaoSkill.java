@@ -43,6 +43,7 @@ public class DaoSkill implements DaoInterface<Skills> {
     }
 
     @Override
+
     public ObservableList<Skills> showDetail(int data) {
         ObservableList<Skills> skList = FXCollections.observableArrayList();
         try {
@@ -65,5 +66,6 @@ public class DaoSkill implements DaoInterface<Skills> {
             System.out.println(exception.getMessage());
         }
         return skList;
+
     }
 }

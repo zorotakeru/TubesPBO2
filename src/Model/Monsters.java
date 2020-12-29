@@ -28,7 +28,7 @@ public class Monsters {
         this.idUser = idUser;
     }
 
-        public Monsters(int idMonster, Monsters monsters) {
+    public Monsters(int idMonster, Monsters monsters) {
         this.setIdMonster(idMonster);
         this.setNameMonster(monsters.getNameMonster());
         this.setHpMonster(monsters.getHpMonster());
@@ -44,8 +44,7 @@ public class Monsters {
 
     }
 
-<<<<<<< Updated upstream
-=======
+
 
     public Monsters(Monsters monsters){
         this.setIdMonster(monsters.getIdMonster());
@@ -62,7 +61,9 @@ public class Monsters {
         this.setIdUser(monsters.getIdUser());
     }
 
->>>>>>> Stashed changes
+
+
+
     public int getIdMonster() {
         return idMonster;
     }
@@ -151,11 +152,6 @@ public class Monsters {
         this.skill2 = skill2;
     }
 
-
-<<<<<<< Updated upstream
-
-
-=======
     @Override
     public String toString() {
         return nameMonster;
@@ -168,5 +164,6 @@ public class Monsters {
     public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
->>>>>>> Stashed changes
+
+
 }

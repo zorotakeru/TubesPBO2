@@ -1,20 +1,28 @@
 package DAO;
 
-<<<<<<< Updated upstream
+
 import java.util.List;
-=======
+
 import Model.Elements;
 
 import Utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
->>>>>>> Stashed changes
 
-public class DaoElement implements DaoInterface {
+import Model.Elements;
+import Model.Skills;
+import Utility.JDBCConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DaoElement implements DaoInterface<Elements> {
     @Override
-<<<<<<< Updated upstream
-    public List showData() {
-=======
+
     public ObservableList<Elements> showData() {
         ObservableList<Elements> skList = FXCollections.observableArrayList();
         try {
@@ -43,8 +51,6 @@ public class DaoElement implements DaoInterface {
 
     @Override
     public ObservableList showDetail(int data) {
-
->>>>>>> Stashed changes
         return null;
     }
 }

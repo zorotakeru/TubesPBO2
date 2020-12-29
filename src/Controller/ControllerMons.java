@@ -2,12 +2,14 @@ package Controller;
 
 import DAO.DaoCharacter;
 import DAO.DaoMonster;
+import Model.Characters;
 import Model.Monsters;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -40,7 +42,6 @@ public class ControllerMons {
         colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
         colSkill1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill1"));
         colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
-        System.out.println(monList);
 
     }
 
@@ -50,8 +51,7 @@ public class ControllerMons {
     }
 
     public void actAddMons(ActionEvent actionEvent) {
-<<<<<<< Updated upstream
-=======
+
         DaoMonster daoMonster = new DaoMonster();
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Add Monster");
@@ -59,14 +59,16 @@ public class ControllerMons {
         dialog.setContentText("Enter your monster name");
         dialog.showAndWait();
         if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
+
             int result = daoMonster.addData(new Monsters(dialog.getEditor().getText(),getRandomNumber(100,2000),getRandomNumber(100,500),getRandomNumber(50,200),getRandomNumber(100,1000),0,"","","","",""));
+
             if (result != 0){
                 System.out.println("Insert Character Berhasil");
             }
             ObservableList<Monsters> mList = daoMonster.showData();
             tblMons.setItems(mList);
         }
->>>>>>> Stashed changes
+
     }
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
