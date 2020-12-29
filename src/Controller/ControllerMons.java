@@ -66,4 +66,12 @@ public class ControllerMons {
             tblMons.setItems(mList);
         }
     }
+
+    public void btnback(ActionEvent actionEvent) {
+
+    }
+
+    public void btnok(ActionEvent actionEvent) {
+
+    }
 }
