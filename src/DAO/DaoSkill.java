@@ -43,7 +43,29 @@ public class DaoSkill implements DaoInterface<Skills> {
     }
 
     @Override
-    public ObservableList showDetail(int data) {
-        return null;
+
+    public ObservableList<Skills> showDetail(int data) {
+        ObservableList<Skills> skList = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT skill.idSkill AS 'id' ,skill.skillName AS 'skillname', skill.elementalMastery AS 'elemastery', ele.nameElement AS 'element' FROM skill JOIN element ele ON skill.Element_idElement = ele.idElement WHERE skill.Element_idElement= ?";
+            PreparedStatement statement;
+            statement = JDBCConnection.getConnection().prepareStatement(query);
+            statement.setInt(1, data);
+            ResultSet result= statement.executeQuery();
+            while (result.next()){
+                int idSkill = result.getInt("id");
+                String skillname = result.getString("skillname");
+                int elementmastery = result.getInt("elemastery");
+                String element = result.getString("element");
+                Skills sk = new Skills(skillname,elementmastery,element);
+                Skills ski = new Skills(idSkill,sk);
+                skList.add(ski);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception.getMessage());
+        }
+        return skList;
+
     }
 }

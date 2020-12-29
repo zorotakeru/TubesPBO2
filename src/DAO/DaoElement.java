@@ -1,10 +1,20 @@
 package DAO;
 
+
+import java.util.List;
+
+import Model.Elements;
+
+import Utility.JDBCConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import Model.Elements;
 import Model.Skills;
 import Utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +22,8 @@ import java.sql.SQLException;
 
 public class DaoElement implements DaoInterface<Elements> {
     @Override
-    public ObservableList showData() {
+
+    public ObservableList<Elements> showData() {
         ObservableList<Elements> skList = FXCollections.observableArrayList();
         try {
             String query = "SELECT element.idElement AS 'id' ,element.nameElement AS 'elementname' FROM element";
@@ -40,7 +51,6 @@ public class DaoElement implements DaoInterface<Elements> {
 
     @Override
     public ObservableList showDetail(int data) {
-
         return null;
     }
 }
