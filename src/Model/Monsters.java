@@ -7,13 +7,14 @@ public class Monsters {
     private int manaMonster;
     private int attMonster;
     private int defMonster;
+    private int idUser;
     private String userName;
     private String elementName1;
     private String elementName2;
     private String skill1;
     private String skill2;
 
-    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster, String userName, String elementName1, String elementName2, String skill1, String skill2) {
+    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster,int idUser, String userName, String elementName1, String elementName2, String skill1, String skill2) {
         this.nameMonster = nameMonster;
         this.hpMonster = hpMonster;
         this.manaMonster = manaMonster;
@@ -24,6 +25,7 @@ public class Monsters {
         this.elementName2 = elementName2;
         this.skill1 = skill1;
         this.skill2 = skill2;
+        this.idUser = idUser;
     }
 
         public Monsters(int idMonster, Monsters monsters) {
@@ -38,8 +40,29 @@ public class Monsters {
         this.setElementName2(monsters.getElementName2());
         this.setSkill1(monsters.getSkill1());
         this.setSkill2(monsters.getSkill2());
+        this.setIdUser(monsters.getIdUser());
+
     }
 
+<<<<<<< Updated upstream
+=======
+
+    public Monsters(Monsters monsters){
+        this.setIdMonster(monsters.getIdMonster());
+        this.setNameMonster(monsters.getNameMonster());
+        this.setHpMonster(monsters.getHpMonster());
+        this.setManaMonster(monsters.getManaMonster());
+        this.setAttMonster(monsters.getAttMonster());
+        this.setDefMonster(monsters.getDefMonster());
+        this.setUserName(monsters.getUserName());
+        this.setElementName1(monsters.getElementName1());
+        this.setElementName2(monsters.getElementName2());
+        this.setSkill1(monsters.getSkill1());
+        this.setSkill2(monsters.getSkill2());
+        this.setIdUser(monsters.getIdUser());
+    }
+
+>>>>>>> Stashed changes
     public int getIdMonster() {
         return idMonster;
     }
@@ -129,6 +152,21 @@ public class Monsters {
     }
 
 
+<<<<<<< Updated upstream
 
 
+=======
+    @Override
+    public String toString() {
+        return nameMonster;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+>>>>>>> Stashed changes
 }
