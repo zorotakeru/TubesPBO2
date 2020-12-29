@@ -10,10 +10,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 
-public class DaoMonster implements DaoInterface{
+
+public class DaoMonster implements DaoInterface<Monsters>{
     @Override
     public ObservableList<Monsters> showData() {
         ObservableList<Monsters> monsList = FXCollections.observableArrayList();
@@ -30,24 +30,17 @@ public class DaoMonster implements DaoInterface{
                 int mana = result.getInt("mana");
                 int att = result.getInt("att");
                 int deff = result.getInt("deff");
-<<<<<<< Updated upstream
-=======
                 int idUser = result.getInt("idUser");
                 int idSkill1 = result.getInt("idSkill1");
                 int idSkill2 = result.getInt("idSkill2");
                 int idElement1 = result.getInt("idElement1");
                 int idElement2 = result.getInt("idElement2");
->>>>>>> Stashed changes
                 String owner = result.getString("owner");
                 String element1 = result.getString("element1");
                 String element2 = result.getString("element2");
                 String skill1 = result.getString("skill1");
                 String skill2 = result.getString("skill2");
-<<<<<<< Updated upstream
-                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,owner,element1,element2,skill1,skill2);
-=======
                 Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2,idSkill1,idSkill2,idElement1,idElement2);
->>>>>>> Stashed changes
                 Monsters mon = new Monsters(id,mo);
                 monsList.add(mon);
             }
@@ -59,15 +52,6 @@ public class DaoMonster implements DaoInterface{
     }
 
     @Override
-<<<<<<< Updated upstream
-    public int addData(Object data) {
-        return 0;
-    }
-
-    @Override
-    public int addData(Object data) {
-        return 0;
-=======
     public int addData(Monsters data) {
         int result = 0;
         try {
@@ -98,7 +82,6 @@ public class DaoMonster implements DaoInterface{
             System.out.println(exception);
         }
         return result;
->>>>>>> Stashed changes
     }
 
     @Override

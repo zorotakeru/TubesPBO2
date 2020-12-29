@@ -1,9 +1,9 @@
 package Controller;
 
-<<<<<<< Updated upstream
+
 public class ControllerAddMons {
 
-=======
+
 import DAO.DaoCharacter;
 import Model.Characters;
 import javafx.collections.ObservableList;
@@ -13,8 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-public class ControllerAddMons {
 
 
     public TextField addnamamonsterfield;
@@ -28,10 +26,13 @@ public class ControllerAddMons {
         ownercmbbox.setItems(cList);
     }
 
+
     public void actbtnback(ActionEvent actionEvent) {
+
         Stage stage = (Stage) btnback.getScene().getWindow();
         stage.close();
     }
+
 
     public void actbtnok(ActionEvent actionEvent) {
         System.out.println(ownercmbbox.getSelectionModel().getSelectedItem());
@@ -47,5 +48,5 @@ public class ControllerAddMons {
             alert.showAndWait();
         }
     }
->>>>>>> Stashed changes
+
 }
