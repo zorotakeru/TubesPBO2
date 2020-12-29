@@ -73,4 +73,12 @@ public class ControllerMons {
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
+
+    public void btnback(ActionEvent actionEvent) {
+
+    }
+
+    public void btnok(ActionEvent actionEvent) {
+
+    }
 }
