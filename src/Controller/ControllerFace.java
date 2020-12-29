@@ -27,6 +27,7 @@ public class ControllerFace {
     public TableColumn <Monsters,String> colElemetSec;
     public Button btnBack;
     public ObservableList<Monsters> monList;
+
     public void initialize(){
         DaoCharacter cDao = new DaoCharacter();
         ObservableList<Characters> cList = cDao.showData();

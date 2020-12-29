@@ -8,13 +8,17 @@ public class Monsters {
     private int attMonster;
     private int defMonster;
     private int idUser;
+    private int idSkill1;
+    private int idSkill2;
+    private int idElement1;
+    private int idElement2;
     private String userName;
     private String elementName1;
     private String elementName2;
     private String skill1;
     private String skill2;
 
-    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster,int idUser, String userName, String elementName1, String elementName2, String skill1, String skill2) {
+    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster,int idUser, String userName, String elementName1, String elementName2, String skill1, String skill2, int idSkill1, int idSkill2, int idElement1, int idElement2) {
         this.nameMonster = nameMonster;
         this.hpMonster = hpMonster;
         this.manaMonster = manaMonster;
@@ -26,6 +30,11 @@ public class Monsters {
         this.skill1 = skill1;
         this.skill2 = skill2;
         this.idUser = idUser;
+        this.idSkill1 = idSkill1;
+        this.idSkill2 = idSkill2;
+        this.idElement1 = idElement1;
+        this.idElement2 = idElement2;
+
     }
 
     public Monsters(int idMonster, Monsters monsters) {
@@ -41,7 +50,10 @@ public class Monsters {
         this.setSkill1(monsters.getSkill1());
         this.setSkill2(monsters.getSkill2());
         this.setIdUser(monsters.getIdUser());
-
+        this.setIdSkill1(monsters.getIdSkill1());
+        this.setIdSkill2(monsters.getIdSkill2());
+        this.setIdElement1(monsters.getIdElement1());
+        this.setIdElement2(monsters.getIdElement2());
     }
 
 
@@ -59,6 +71,10 @@ public class Monsters {
         this.setSkill1(monsters.getSkill1());
         this.setSkill2(monsters.getSkill2());
         this.setIdUser(monsters.getIdUser());
+        this.setIdSkill1(monsters.getIdSkill1());
+        this.setIdSkill2(monsters.getIdSkill2());
+        this.setIdElement1(monsters.getIdElement1());
+        this.setIdElement2(monsters.getIdElement2());
     }
 
 
@@ -166,4 +182,35 @@ public class Monsters {
     }
 
 
+    public int getIdSkill1() {
+        return idSkill1;
+    }
+
+    public void setIdSkill1(int idSkill1) {
+        this.idSkill1 = idSkill1;
+    }
+
+    public int getIdSkill2() {
+        return idSkill2;
+    }
+
+    public void setIdSkill2(int idSkill2) {
+        this.idSkill2 = idSkill2;
+    }
+
+    public int getIdElement1() {
+        return idElement1;
+    }
+
+    public void setIdElement1(int idElement1) {
+        this.idElement1 = idElement1;
+    }
+
+    public int getIdElement2() {
+        return idElement2;
+    }
+
+    public void setIdElement2(int idElement2) {
+        this.idElement2 = idElement2;
+    }
 }

@@ -1,17 +1,27 @@
 package Controller;
 
 import DAO.DaoCharacter;
+import DAO.DaoElement;
 import DAO.DaoMonster;
+import DAO.DaoSkill;
+import Main.Main;
 import Model.Characters;
+import Model.Elements;
 import Model.Monsters;
+import Model.Skills;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ControllerMons {
     public TableView<Monsters> tblMons;
@@ -28,7 +38,7 @@ public class ControllerMons {
     public Button btnBack;
     ObservableList<Monsters> monList;
 
-    public void initialize(){
+    public void initialize() {
         DaoMonster daoMonster = new DaoMonster();
         monList = daoMonster.showData();
         tblMons.setItems(monList);
@@ -50,26 +60,41 @@ public class ControllerMons {
         stage.close();
     }
 
-    public void actAddMons(ActionEvent actionEvent) {
+    public void actAddMons(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../View/AddMonster.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("add monsters");
+        stage.setScene(new Scene(root));
+        ControllerAddMons addMons = loader.getController();
+        stage.showAndWait();
+
+
+        DaoElement eDao= new DaoElement();
+        ObservableList<Elements> eList = eDao.showData();
+        int element1= getRandomNumber(0,eList.size());
+        int element2= getRandomNumber(0,eList.size());
+
+        DaoSkill sDao = new DaoSkill();
+        ObservableList<Skills> sList1 = sDao.showDetail(element1+1);
+        ObservableList<Skills> sList2 = sDao.showDetail(element2+1);
+
+        int skill1= getRandomNumber(0,sList1.size());
+        int skill2= getRandomNumber(0,sList2.size());
+
 
         DaoMonster daoMonster = new DaoMonster();
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Add Monster");
-        dialog.setHeaderText("Confirmation");
-        dialog.setContentText("Enter your monster name");
-        dialog.showAndWait();
-        if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
+        int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "",skill1+1,skill2+1,element1+1,element2+1));
 
-            int result = daoMonster.addData(new Monsters(dialog.getEditor().getText(),getRandomNumber(100,2000),getRandomNumber(100,500),getRandomNumber(50,200),getRandomNumber(100,1000),0,"","","","",""));
-
-            if (result != 0){
-                System.out.println("Insert Character Berhasil");
-            }
-            ObservableList<Monsters> mList = daoMonster.showData();
-            tblMons.setItems(mList);
+        if (result != 0) {
+            System.out.println("Insert Character Berhasil");
         }
+        ObservableList<Monsters> mList = daoMonster.showData();
+        tblMons.setItems(mList);
+
 
     }
+
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
