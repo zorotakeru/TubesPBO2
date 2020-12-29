@@ -1,7 +1,7 @@
 package Controller;
 
 
-public class ControllerAddMons {
+
 
 
 import DAO.DaoCharacter;
@@ -14,7 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
+public class ControllerAddMons {
     public TextField addnamamonsterfield;
     public ComboBox<Characters> ownercmbbox;
     public Button btnback;
