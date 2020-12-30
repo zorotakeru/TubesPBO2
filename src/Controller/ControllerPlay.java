@@ -3,6 +3,8 @@ package Controller;
 
 import DAO.DaoMonster;
 import Model.Monsters;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,9 +31,20 @@ public class ControllerPlay {
     public Label enemyElement2;
     public TextArea areaInfo;
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
+    ObservableList<Monsters> mEList= FXCollections.observableArrayList();
+
 
     public void initialize() {
         monsterList.setItems(mList);
+        selectMonster();
+        monsterHp.setEditable(false);
+        monsterMana.setEditable(false);
+        monsterAttack.setEditable(false);
+        monsterDeffend.setEditable(false);
+        enemyHp.setEditable(false);
+        enemyMana.setEditable(false);
+        enemyAttack.setEditable(false);
+        enemyDeffend.setEditable(false);
     }
 
     public void actAttack(ActionEvent actionEvent) {
@@ -45,4 +58,21 @@ public class ControllerPlay {
     public void actSkill2(ActionEvent actionEvent) {
 
     }
+
+    public void selectMonster(){
+        monsterList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Monsters>() {
+            @Override
+            public void changed(ObservableValue<? extends Monsters> observable, Monsters oldValue, Monsters newValue) {
+                monsterHp.setText(Integer.toString(newValue.getHpMonster()));
+                monsterMana.setText(Integer.toString(newValue.getManaMonster()));
+                monsterAttack.setText(Integer.toString(newValue.getAttMonster()));
+                monsterDeffend.setText(Integer.toString(newValue.getDefMonster()));
+                monsterElement1.setText(newValue.getElementName1());
+                monsterElement2.setText(newValue.getElementName2());
+                btnSkill1.setText(newValue.getSkill1());
+                btnSkill2.setText(newValue.getSkill2());
+            }
+        });
+    }
+
 }
