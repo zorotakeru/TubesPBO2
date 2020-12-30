@@ -15,7 +15,7 @@ import java.util.List;
 
 public class DaoCharacter implements DaoInterface<Characters>{
     @Override
-    public ObservableList showData() {
+    public ObservableList<Characters> showData() {
         ObservableList<Characters> chList = FXCollections.observableArrayList();
         try {
             String query = "SELECT user.idUser,user.nameUser,user.Point,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser GROUP BY user.idUser,user.nameUser,user.Point,user.Level";
@@ -66,7 +66,28 @@ public class DaoCharacter implements DaoInterface<Characters>{
     }
 
     @Override
-    public List<Characters> showDetail(int data) {
-        return null;
+    public ObservableList<Characters> showDetail(int data) {
+        ObservableList<Characters> chList = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT user.idUser,user.nameUser,user.Point,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser WHERE user.idUser = ? GROUP BY user.idUser,user.nameUser,user.Point,user.Level";
+            PreparedStatement statement;
+            statement = JDBCConnection.getConnection().prepareStatement(query);
+            statement.setInt(1, data);
+            ResultSet result= statement.executeQuery();
+            while (result.next()){
+                int idChar = result.getInt("user.idUser");
+                String nameUser = result.getString("user.nameUser");
+                int point = result.getInt("user.Point");
+                int level = result.getInt("user.Level");
+                int mCount = result.getInt("totalMonster");
+                Characters ch = new Characters(nameUser,point,level,mCount);
+                Characters cha = new Characters(idChar,ch);
+                chList.add(cha);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception.getMessage());
+        }
+        return chList;
     }
 }

@@ -1,7 +1,9 @@
 package Controller;
 
+import DAO.DaoCharacter;
 import DAO.DaoMonster;
 import Main.Main;
+import Model.Characters;
 import Model.Monsters;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +24,9 @@ public class ControllerFace2 {
     public Button btnfight;
     public Button btnBack;
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
+    ObservableList<Characters> cEList;
+    ObservableList<Monsters> mEList;
+
 
     public void initialize(){
         comboM2.setDisable(true);
@@ -31,6 +36,7 @@ public class ControllerFace2 {
     }
 
     public void actfight(ActionEvent actionEvent) throws IOException {
+        randomEnemy();
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("../View/PlayPage.fxml"));
         Parent root = loader.load();
@@ -38,12 +44,14 @@ public class ControllerFace2 {
         stage.setScene(new Scene(root));
         ControllerPlay CP = loader.getController();
         CP.mList.addAll(mList);
+        CP.mEList.addAll(mEList);
         stage.showAndWait();
     }
 
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
+
     }
 
     public void actCmbM1(ActionEvent actionEvent) {
@@ -63,5 +71,17 @@ public class ControllerFace2 {
         comboM3.setDisable(true);
         System.out.println(mList);
         btnfight.setDisable(false);
+    }
+
+    public void randomEnemy(){
+        DaoCharacter cDao = new DaoCharacter();
+        DaoMonster mDao = new DaoMonster();
+        cEList = cDao.showData();
+        cEList = cDao.showDetail(cEList.get(getRandomNumber(0,cEList.size())).getIdChar());
+        mEList = mDao.showDetail(cEList.get(0).getIdChar());
+    }
+
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }

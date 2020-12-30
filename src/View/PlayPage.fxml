@@ -6,13 +6,15 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="554.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerPlay">
    <children>
+      <Button fx:id="btnAttack" layoutX="582.0" layoutY="140.0" mnemonicParsing="false" onAction="#actAttack" prefHeight="71.0" prefWidth="71.0" text="Attack" />
       <Label alignment="CENTER" layoutX="234.0" layoutY="14.0" prefHeight="38.0" prefWidth="272.0" text="LET THE BATTLE BEGIN!">
 
-               <font>
+         <font>
             <Font size="24.0" />
          </font>
       </Label>
@@ -34,14 +36,21 @@
       <TextField fx:id="enemyMana" layoutX="329.0" layoutY="364.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="enemyAttack" layoutX="329.0" layoutY="406.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="enemyDeffend" layoutX="329.0" layoutY="449.0" prefHeight="26.0" prefWidth="169.0" />
-      <Label fx:id="monsterElement1" layoutX="605.0" layoutY="63.0" text="Element 1" />
-      <Label fx:id="monsterElement2" layoutX="605.0" layoutY="103.0" text="Element 2" />
-      <Button fx:id="btnAttack" layoutX="606.0" layoutY="141.0" mnemonicParsing="false" onAction="#actAttack" text="Attack" />
-      <Button fx:id="btnSkill1" layoutX="558.0" layoutY="184.0" mnemonicParsing="false" onAction="#actSkill1" text="Skill 1" />
-      <Button fx:id="btnSkill2" layoutX="656.0" layoutY="184.0" mnemonicParsing="false" onAction="#actSkill2" text="Skill 2" />
-      <Label fx:id="enemyElement1" layoutX="329.0" layoutY="491.0" text="Element 1" />
-      <Label fx:id="enemyElement2" layoutX="446.0" layoutY="491.0" text="Element 2" />
+      <Label fx:id="monsterElement1" layoutX="592.0" layoutY="63.0" text="Element 1" />
+      <Label fx:id="monsterElement2" layoutX="592.0" layoutY="103.0" text="Element 2" />
+      <Label fx:id="enemyElement1" layoutX="95.0" layoutY="329.0" text="Element 1" />
+      <Label fx:id="enemyElement2" layoutX="95.0" layoutY="369.0" text="Element 2" />
       <TextArea fx:id="areaInfo" layoutX="33.0" layoutY="277.0" prefHeight="38.0" prefWidth="674.0" />
+      <HBox layoutX="382.0" layoutY="224.0" prefHeight="26.0" prefWidth="113.0">
+         <children>
+            <Button fx:id="btnSkill2" mnemonicParsing="false" onAction="#actSkill2" prefHeight="26.0" prefWidth="159.0" text="Skill 2" />
+         </children>
+      </HBox>
+      <HBox layoutX="234.0" layoutY="224.0" prefHeight="26.0" prefWidth="113.0">
+         <children>
+            <Button fx:id="btnSkill1" mnemonicParsing="false" onAction="#actSkill1" prefHeight="26.0" prefWidth="143.0" text="Skill 1" />
+         </children>
+      </HBox>
 
    </children>
 </AnchorPane>
