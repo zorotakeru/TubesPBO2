@@ -72,19 +72,25 @@ public class ControllerMons {
 
         DaoElement eDao= new DaoElement();
         ObservableList<Elements> eList = eDao.showData();
-        int element1= getRandomNumber(0,eList.size());
-        int element2= getRandomNumber(0,eList.size());
+        System.out.println(eList.size());
+        int element1= eList.get(getRandomNumber(0,eList.size())).getIdElement();
+        System.out.println(element1);
+        int element2= eList.get(getRandomNumber(0,eList.size())).getIdElement();
+        System.out.println(element2);
 
         DaoSkill sDao = new DaoSkill();
-        ObservableList<Skills> sList1 = sDao.showDetail(element1+1);
-        ObservableList<Skills> sList2 = sDao.showDetail(element2+1);
+        ObservableList<Skills> sList1 = sDao.showDetail(eList.get(element1-1).getIdElement());
+        System.out.println(sList1);
+        ObservableList<Skills> sList2 = sDao.showDetail(eList.get(element2-1).getIdElement());
+        System.out.println(sList2);
 
-        int skill1= getRandomNumber(0,sList1.size());
-        int skill2= getRandomNumber(0,sList2.size());
-
+        int skill1= sList1.get(getRandomNumber(0,sList1.size())).getIdSkills();
+        System.out.println(skill1);
+        int skill2= sList2.get(getRandomNumber(0,sList2.size())).getIdSkills();
+        System.out.println(skill2);
 
         DaoMonster daoMonster = new DaoMonster();
-        int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "",skill1+1,skill2+1,element1+1,element2+1));
+        int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "",skill1,skill2,element1,element2));
 
         if (result != 0) {
             System.out.println("Insert Character Berhasil");
@@ -99,11 +105,4 @@ public class ControllerMons {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    public void btnback(ActionEvent actionEvent) {
-
-    }
-
-    public void btnok(ActionEvent actionEvent) {
-
-    }
 }
