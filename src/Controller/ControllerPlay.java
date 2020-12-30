@@ -15,7 +15,7 @@ public class ControllerPlay {
     public TextField monsterMana;
     public TextField monsterAttack;
     public TextField monsterDeffend;
-    public ListView enemyList;
+    public ListView<Monsters> enemyList;
     public TextField enemyHp;
     public TextField enemyMana;
     public TextField enemyAttack;
@@ -31,7 +31,7 @@ public class ControllerPlay {
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
 
     public void initialize() {
-
+        monsterList.setItems(mList);
     }
 
     public void actAttack(ActionEvent actionEvent) {

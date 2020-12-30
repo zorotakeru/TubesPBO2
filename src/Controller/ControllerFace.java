@@ -27,11 +27,13 @@ public class ControllerFace {
     public TableColumn <Monsters,String> colElemetSec;
     public Button btnBack;
     public ObservableList<Monsters> monList;
+    public Button btnFight;
 
     public void initialize(){
         DaoCharacter cDao = new DaoCharacter();
         ObservableList<Characters> cList = cDao.showData();
         comboCharacter.setItems(cList);
+        btnFight.setDisable(true);
     }
 
     public void actFight(ActionEvent actionEvent) throws IOException {
@@ -63,5 +65,6 @@ public class ControllerFace {
         colMonsterName.setCellValueFactory(new PropertyValueFactory<Monsters, String>("nameMonster"));
         colElementPri.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName1"));
         colElemetSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
+        btnFight.setDisable(false);
     }
 }

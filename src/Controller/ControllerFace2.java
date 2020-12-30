@@ -26,7 +26,7 @@ public class ControllerFace2 {
     public void initialize(){
         comboM2.setDisable(true);
         comboM3.setDisable(true);
-
+        btnfight.setDisable(true);
 
     }
 
@@ -37,7 +37,7 @@ public class ControllerFace2 {
         stage.setTitle("Battling Foe");
         stage.setScene(new Scene(root));
         ControllerPlay CP = loader.getController();
-        CP.monsterList.setItems(mList);
+        CP.mList.addAll(mList);
         stage.showAndWait();
     }
 
@@ -62,5 +62,6 @@ public class ControllerFace2 {
         mList.add(new Monsters(comboM3.getSelectionModel().getSelectedItem()));
         comboM3.setDisable(true);
         System.out.println(mList);
+        btnfight.setDisable(false);
     }
 }

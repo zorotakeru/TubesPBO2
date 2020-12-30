@@ -55,7 +55,7 @@ public class DaoMonster implements DaoInterface<Monsters>{
     public int addData(Monsters data) {
         int result = 0;
         try {
-            String query = "INSERT INTO club (nameMonster,hpMonster,manaMonster,attackMonster,deffendMonster,User_idUser,Element_idElement1,Element_idElement2,skill1Monster,skill2Monster) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO monster (nameMonster,hpMonster,manaMonster,attackMonster,deffendMonster,User_idUser,Element_idElement1,Element_idElement2,skill1Monster,skill2Monster) VALUES (?,?,?,?,?,?,?,?,?,?)";
             Connection conn = JDBCConnection.getConnection();
             conn.setAutoCommit(false);
             PreparedStatement statement;
