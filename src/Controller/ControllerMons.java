@@ -99,11 +99,4 @@ public class ControllerMons {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    public void btnback(ActionEvent actionEvent) {
-
-    }
-
-    public void btnok(ActionEvent actionEvent) {
-
-    }
 }
