@@ -36,6 +36,8 @@ public class ControllerFace2 {
         Parent root = loader.load();
         stage.setTitle("Battling Foe");
         stage.setScene(new Scene(root));
+        ControllerPlay CP = loader.getController();
+        CP.monsterList.setItems(mList);
         stage.showAndWait();
     }
 
