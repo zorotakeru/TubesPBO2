@@ -24,8 +24,8 @@ public class ControllerFace2 {
     public Button btnfight;
     public Button btnBack;
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
-    ObservableList<Characters> cEList;
-    ObservableList<Monsters> mEList;
+    ObservableList<Characters> cEList= FXCollections.observableArrayList();
+    ObservableList<Monsters> mEList= FXCollections.observableArrayList();
 
 
     public void initialize(){
@@ -44,6 +44,12 @@ public class ControllerFace2 {
         stage.setScene(new Scene(root));
         ControllerPlay CP = loader.getController();
         CP.mList.addAll(mList);
+
+
+        if(mEList.size()>3){
+            mEList.remove(3,mEList.size());
+        }
+
         CP.mEList.addAll(mEList);
         stage.showAndWait();
     }

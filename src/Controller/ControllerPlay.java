@@ -33,8 +33,13 @@ public class ControllerPlay {
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
     ObservableList<Monsters> mEList= FXCollections.observableArrayList();
 
+    int mIndex;
+    int mEIndex;
+
 
     public void initialize() {
+        System.out.println(mEList);
+
         enemyList.setItems(mEList);
         selectEnemyMonster();
         monsterList.setItems(mList);
@@ -47,6 +52,7 @@ public class ControllerPlay {
         enemyMana.setEditable(false);
         enemyAttack.setEditable(false);
         enemyDeffend.setEditable(false);
+
     }
 
     public void actAttack(ActionEvent actionEvent) {
@@ -73,6 +79,8 @@ public class ControllerPlay {
                 monsterElement2.setText(newValue.getElementName2());
                 btnSkill1.setText(newValue.getSkill1());
                 btnSkill2.setText(newValue.getSkill2());
+                mIndex = monsterList.getSelectionModel().getSelectedIndex();
+                System.out.println(mIndex);
             }
         });
     }
@@ -88,6 +96,8 @@ public class ControllerPlay {
                 enemyDeffend.setText(Integer.toString(newValue.getDefMonster()));
                 enemyElement1.setText(newValue.getElementName1());
                 enemyElement2.setText(newValue.getElementName2());
+                mEIndex = enemyList.getSelectionModel().getSelectedIndex();
+                System.out.println(mEIndex);
             }
         });
     }
