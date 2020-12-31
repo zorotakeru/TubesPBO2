@@ -35,6 +35,8 @@ public class ControllerPlay {
 
 
     public void initialize() {
+        enemyList.setItems(mEList);
+        selectEnemyMonster();
         monsterList.setItems(mList);
         selectMonster();
         monsterHp.setEditable(false);
@@ -74,5 +76,21 @@ public class ControllerPlay {
             }
         });
     }
+
+
+    public void selectEnemyMonster(){
+        enemyList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Monsters>() {
+            @Override
+            public void changed(ObservableValue<? extends Monsters> observable, Monsters oldValue, Monsters newValue) {
+                enemyHp.setText(Integer.toString(newValue.getHpMonster()));
+                enemyMana.setText(Integer.toString(newValue.getManaMonster()));
+                enemyAttack.setText(Integer.toString(newValue.getAttMonster()));
+                enemyDeffend.setText(Integer.toString(newValue.getDefMonster()));
+                enemyElement1.setText(newValue.getElementName1());
+                enemyElement2.setText(newValue.getElementName2());
+            }
+        });
+    }
+
 
 }
