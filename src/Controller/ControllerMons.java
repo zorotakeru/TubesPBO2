@@ -90,13 +90,15 @@ public class ControllerMons {
         System.out.println(skill2);
 
         DaoMonster daoMonster = new DaoMonster();
-        int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "",skill1,skill2,element1,element2));
+        if(!addMons.addnamamonsterfield.getText().equals("") && addMons.ownercmbbox.getValue() != null) {
+            int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "", skill1, skill2, element1, element2));
 
-        if (result != 0) {
-            System.out.println("Insert Character Berhasil");
+            if (result != 0) {
+                System.out.println("Insert Character Berhasil");
+            }
+            ObservableList<Monsters> mList = daoMonster.showData();
+            tblMons.setItems(mList);
         }
-        ObservableList<Monsters> mList = daoMonster.showData();
-        tblMons.setItems(mList);
 
 
     }
