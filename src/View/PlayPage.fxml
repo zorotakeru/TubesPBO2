@@ -22,20 +22,20 @@
       <Label layoutX="234.0" layoutY="63.0" text="HP" />
       <Label layoutX="234.0" layoutY="103.0" text="Mana" />
       <Label layoutX="234.0" layoutY="145.0" text="Attack" />
-      <Label layoutX="234.0" layoutY="188.0" text="Deffend" />
+      <Label layoutX="234.0" layoutY="188.0" text="Defend" />
       <TextField fx:id="monsterHp" layoutX="326.0" layoutY="59.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="monsterMana" layoutX="326.0" layoutY="98.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="monsterAttack" layoutX="326.0" layoutY="140.0" prefHeight="26.0" prefWidth="169.0" />
-      <TextField fx:id="monsterDeffend" layoutX="326.0" layoutY="183.0" prefHeight="26.0" prefWidth="169.0" />
+      <TextField fx:id="monsterDefend" layoutX="326.0" layoutY="183.0" prefHeight="26.0" prefWidth="169.0" />
       <ListView fx:id="enemyList" layoutX="554.0" layoutY="325.0" prefHeight="200.0" prefWidth="155.0" />
       <Label layoutX="242.0" layoutY="329.0" text="HP" />
       <Label layoutX="242.0" layoutY="369.0" text="Mana" />
       <Label layoutX="242.0" layoutY="411.0" text="Attack" />
-      <Label layoutX="242.0" layoutY="454.0" text="Deffend" />
+      <Label layoutX="242.0" layoutY="454.0" text="Defend" />
       <TextField fx:id="enemyHp" layoutX="329.0" layoutY="325.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="enemyMana" layoutX="329.0" layoutY="364.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="enemyAttack" layoutX="329.0" layoutY="406.0" prefHeight="26.0" prefWidth="169.0" />
-      <TextField fx:id="enemyDeffend" layoutX="329.0" layoutY="449.0" prefHeight="26.0" prefWidth="169.0" />
+      <TextField fx:id="enemyDefend" layoutX="329.0" layoutY="449.0" prefHeight="26.0" prefWidth="169.0" />
       <Label fx:id="monsterElement1" layoutX="592.0" layoutY="63.0" text="Element 1" />
       <Label fx:id="monsterElement2" layoutX="592.0" layoutY="103.0" text="Element 2" />
       <Label fx:id="enemyElement1" layoutX="95.0" layoutY="329.0" text="Element 1" />
