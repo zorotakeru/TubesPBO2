@@ -31,7 +31,7 @@
       </Button>
       <Label layoutX="171.0" layoutY="117.0" prefHeight="18.0" prefWidth="102.0" text="Available Monsters" />
       <Label layoutX="386.0" layoutY="117.0" text="READY TO FIGHT?" />
-      <Button fx:id="btnBack" layoutX="20.0" layoutY="358.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
       <ImageView fitHeight="162.0" fitWidth="144.0" layoutX="362.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

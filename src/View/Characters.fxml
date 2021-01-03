@@ -22,7 +22,7 @@
             <TableColumn fx:id="colTotalMonsters" prefWidth="127.20001220703125" text="Total Monsters" />
         </columns>
       </TableView>
-      <Button fx:id="btnBack" layoutX="20.0" layoutY="361.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
       <Button layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddChar" prefHeight="26.0" prefWidth="472.0" text="Add Character" />
    </children>
 </AnchorPane>

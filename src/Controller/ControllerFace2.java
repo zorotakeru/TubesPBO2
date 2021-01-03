@@ -27,12 +27,10 @@ public class ControllerFace2 {
     ObservableList<Characters> cEList= FXCollections.observableArrayList();
     ObservableList<Monsters> mEList= FXCollections.observableArrayList();
 
-
     public void initialize(){
         comboM2.setDisable(true);
         comboM3.setDisable(true);
         btnfight.setDisable(true);
-
     }
 
     public void actfight(ActionEvent actionEvent) throws IOException {
@@ -45,7 +43,6 @@ public class ControllerFace2 {
         ControllerPlay CP = loader.getController();
         CP.mList.addAll(mList);
 
-
         if(mEList.size()>3){
             mEList.remove(3,mEList.size());
         }
@@ -57,7 +54,6 @@ public class ControllerFace2 {
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
-
     }
 
     public void actCmbM1(ActionEvent actionEvent) {
