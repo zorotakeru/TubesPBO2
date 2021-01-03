@@ -16,12 +16,12 @@ public class ControllerPlay {
     public TextField monsterHp;
     public TextField monsterMana;
     public TextField monsterAttack;
-    public TextField monsterDeffend;
+    public TextField monsterDefend;
     public ListView<Monsters> enemyList;
     public TextField enemyHp;
     public TextField enemyMana;
     public TextField enemyAttack;
-    public TextField enemyDeffend;
+    public TextField enemyDefend;
     public Label monsterElement1;
     public Label monsterElement2;
     public Button btnAttack;
@@ -47,11 +47,11 @@ public class ControllerPlay {
         monsterHp.setEditable(false);
         monsterMana.setEditable(false);
         monsterAttack.setEditable(false);
-        monsterDeffend.setEditable(false);
+        monsterDefend.setEditable(false);
         enemyHp.setEditable(false);
         enemyMana.setEditable(false);
         enemyAttack.setEditable(false);
-        enemyDeffend.setEditable(false);
+        enemyDefend.setEditable(false);
 
     }
 
@@ -74,7 +74,7 @@ public class ControllerPlay {
                 monsterHp.setText(Integer.toString(newValue.getHpMonster()));
                 monsterMana.setText(Integer.toString(newValue.getManaMonster()));
                 monsterAttack.setText(Integer.toString(newValue.getAttMonster()));
-                monsterDeffend.setText(Integer.toString(newValue.getDefMonster()));
+                monsterDefend.setText(Integer.toString(newValue.getDefMonster()));
                 monsterElement1.setText(newValue.getElementName1());
                 monsterElement2.setText(newValue.getElementName2());
                 btnSkill1.setText(newValue.getSkill1());
@@ -93,7 +93,7 @@ public class ControllerPlay {
                 enemyHp.setText(Integer.toString(newValue.getHpMonster()));
                 enemyMana.setText(Integer.toString(newValue.getManaMonster()));
                 enemyAttack.setText(Integer.toString(newValue.getAttMonster()));
-                enemyDeffend.setText(Integer.toString(newValue.getDefMonster()));
+                enemyDefend.setText(Integer.toString(newValue.getDefMonster()));
                 enemyElement1.setText(newValue.getElementName1());
                 enemyElement2.setText(newValue.getElementName2());
                 mEIndex = enemyList.getSelectionModel().getSelectedIndex();
