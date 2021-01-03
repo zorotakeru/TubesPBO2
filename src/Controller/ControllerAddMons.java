@@ -1,9 +1,5 @@
 package Controller;
 
-
-
-
-
 import DAO.DaoCharacter;
 import Model.Characters;
 import javafx.collections.ObservableList;
@@ -26,13 +22,11 @@ public class ControllerAddMons {
         ownercmbbox.setItems(cList);
     }
 
-
     public void actbtnback(ActionEvent actionEvent) {
 
         Stage stage = (Stage) btnback.getScene().getWindow();
         stage.close();
     }
-
 
     public void actbtnok(ActionEvent actionEvent) {
         System.out.println(ownercmbbox.getSelectionModel().getSelectedItem());
@@ -48,5 +42,4 @@ public class ControllerAddMons {
             alert.showAndWait();
         }
     }
-
 }

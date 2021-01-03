@@ -20,8 +20,6 @@ public class ControllerChar {
     public Button btnBack;
     ObservableList<Characters> cList;
 
-
-
     public void initialize(){
         DaoCharacter daoCharacter = new DaoCharacter();
         cList=daoCharacter.showData();
@@ -30,7 +28,6 @@ public class ControllerChar {
         colCharLevel.setCellValueFactory(new PropertyValueFactory<Characters, String>("level"));
         colCharXP.setCellValueFactory(new PropertyValueFactory<Characters, String>("point"));
         colTotalMonsters.setCellValueFactory(new PropertyValueFactory<Characters, String>("totalMonster"));
-
     }
 
     public void actBack(ActionEvent actionEvent) {
@@ -54,5 +51,4 @@ public class ControllerChar {
             tblChar.setItems(cList);
         }
     }
-
 }

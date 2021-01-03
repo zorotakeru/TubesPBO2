@@ -18,7 +18,8 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ListView fx:id="monsterList" layoutX="34.0" layoutY="63.0" prefHeight="200.0" prefWidth="155.0" />
+      <Label alignment="CENTER" layoutX="34.0" layoutY="63.0" text="Player"></Label>
+      <ListView fx:id="monsterList" layoutX="34.0" layoutY="82.0" prefHeight="169.0" prefWidth="155.0" />
       <Label layoutX="234.0" layoutY="63.0" text="HP" />
       <Label layoutX="234.0" layoutY="103.0" text="Mana" />
       <Label layoutX="234.0" layoutY="145.0" text="Attack" />
@@ -27,7 +28,9 @@
       <TextField fx:id="monsterMana" layoutX="326.0" layoutY="98.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="monsterAttack" layoutX="326.0" layoutY="140.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="monsterDefend" layoutX="326.0" layoutY="183.0" prefHeight="26.0" prefWidth="169.0" />
-      <ListView fx:id="enemyList" layoutX="554.0" layoutY="325.0" prefHeight="200.0" prefWidth="155.0" />
+
+      <Label alignment="CENTER" layoutX="680.0" layoutY="335.0" text="COM"></Label>
+      <ListView fx:id="enemyList" layoutX="552.0" layoutY="352.0" prefHeight="169.0" prefWidth="155.0" />
       <Label layoutX="242.0" layoutY="329.0" text="HP" />
       <Label layoutX="242.0" layoutY="369.0" text="Mana" />
       <Label layoutX="242.0" layoutY="411.0" text="Attack" />

@@ -52,7 +52,6 @@ public class ControllerMons {
         colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
         colSkill1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill1"));
         colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
-
     }
 
     public void actBack(ActionEvent actionEvent) {
@@ -99,8 +98,6 @@ public class ControllerMons {
             ObservableList<Monsters> mList = daoMonster.showData();
             tblMons.setItems(mList);
         }
-
-
     }
 
     public int getRandomNumber(int min, int max) {
