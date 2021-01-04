@@ -15,7 +15,6 @@ public class ControllerChar {
     public TableView<Characters> tblChar;
     public TableColumn<Characters, String> colCharName;
     public TableColumn<Characters, String> colCharLevel;
-    public TableColumn<Characters, String> colCharXP;
     public TableColumn<Characters, String> colTotalMonsters;
     public Button btnBack;
     ObservableList<Characters> cList;
@@ -26,7 +25,6 @@ public class ControllerChar {
         tblChar.setItems(cList);
         colCharName.setCellValueFactory(new PropertyValueFactory<Characters, String>("nameUser"));
         colCharLevel.setCellValueFactory(new PropertyValueFactory<Characters, String>("level"));
-        colCharXP.setCellValueFactory(new PropertyValueFactory<Characters, String>("point"));
         colTotalMonsters.setCellValueFactory(new PropertyValueFactory<Characters, String>("totalMonster"));
     }
 
@@ -43,7 +41,7 @@ public class ControllerChar {
         dialog.setContentText("Enter your name");
         dialog.showAndWait();
         if (!dialog.getEditor().getText().equals("")&&dialog.getEditor()!=null) {
-            int result = daoCharacter.addData(new Characters(dialog.getEditor().getText(), 0,0,0));
+            int result = daoCharacter.addData(new Characters(dialog.getEditor().getText(),0,0));
             if (result != 0){
                 System.out.println("Insert Character Berhasil");
             }

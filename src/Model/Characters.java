@@ -5,13 +5,11 @@ import javafx.collections.ObservableList;
 public class Characters {
     private int idChar;
     private String nameUser;
-    private int point;
     private int level;
     private int totalMonster;
 
-    public Characters(String nameUser, int point, int level, int totalMonster) {
+    public Characters(String nameUser, int level, int totalMonster) {
         this.nameUser = nameUser;
-        this.point = point;
         this.level = level;
         this.totalMonster = totalMonster;
     }
@@ -19,7 +17,6 @@ public class Characters {
     public Characters(int idChar, Characters characters){
         this.setIdChar(idChar);
         this.setNameUser(characters.getNameUser());
-        this.setPoint(characters.getPoint());
         this.setLevel(characters.getLevel());
         this.setTotalMonster(characters.getTotalMonster());
     }
@@ -39,14 +36,6 @@ public class Characters {
 
     public void setNameUser(String nameUser) {
         this.nameUser = nameUser;
-    }
-
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
     }
 
     public int getLevel() {

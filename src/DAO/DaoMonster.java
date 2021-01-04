@@ -18,7 +18,7 @@ public class DaoMonster implements DaoInterface<Monsters>{
     public ObservableList<Monsters> showData() {
         ObservableList<Monsters> monsList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff',monster.skill1Monster as 'idSkill1', s1.skillName AS 'skill1',monster.skill2Monster as 'idSkill2', s2.skillName AS 'skill2',monster.User_idUser AS 'idUser', user.nameUser AS 'owner',monster.Element_idElement1 AS 'idElement1', e1.nameElement AS 'element1',monster.Element_idElement2 AS 'idElement2', e2.nameElement AS 'element2' FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element e1 ON monster.Element_idElement1 = e1.idElement JOIN element e2 ON monster.Element_idElement2 = e2.idElement JOIN skill s1 ON monster.skill1Monster = s1.idSkill JOIN skill s2 ON monster.skill2Monster = s2.idSkill";
+            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff',monster.skill1Monster as 'idSkill1', s1.skillName AS 'skill1',monster.skill2Monster as 'idSkill2', s2.skillName AS 'skill2',monster.User_idUser AS 'idUser', user.nameUser AS 'owner',monster.Element_idElement1 AS 'idElement1', e1.nameElement AS 'element1',monster.Element_idElement2 AS 'idElement2', e2.nameElement AS 'element2', s1.elementalMastery AS 'mastery1', s2.elementalMastery AS 'mastery2' FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element e1 ON monster.Element_idElement1 = e1.idElement JOIN element e2 ON monster.Element_idElement2 = e2.idElement JOIN skill s1 ON monster.skill1Monster = s1.idSkill JOIN skill s2 ON monster.skill2Monster = s2.idSkill";
 
             PreparedStatement statement;
             statement = JDBCConnection.getConnection().prepareStatement(query);
@@ -40,7 +40,9 @@ public class DaoMonster implements DaoInterface<Monsters>{
                 String element2 = result.getString("element2");
                 String skill1 = result.getString("skill1");
                 String skill2 = result.getString("skill2");
-                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2,idSkill1,idSkill2,idElement1,idElement2);
+                int mastery1 = result.getInt("mastery1");
+                int mastery2 = result.getInt("mastery2");
+                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2,idSkill1,idSkill2,idElement1,idElement2,mastery1,mastery2);
                 Monsters mon = new Monsters(id,mo);
                 monsList.add(mon);
             }
@@ -88,7 +90,7 @@ public class DaoMonster implements DaoInterface<Monsters>{
     public ObservableList<Monsters> showDetail(int data) {
         ObservableList<Monsters> monsList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff',monster.skill1Monster as 'idSkill1', s1.skillName AS 'skill1',monster.skill2Monster as 'idSkill2', s2.skillName AS 'skill2',monster.User_idUser AS 'idUser', user.nameUser AS 'owner',monster.Element_idElement1 AS 'idElement1', e1.nameElement AS 'element1',monster.Element_idElement2 AS 'idElement2', e2.nameElement AS 'element2' FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element e1 ON monster.Element_idElement1 = e1.idElement JOIN element e2 ON monster.Element_idElement2 = e2.idElement JOIN skill s1 ON monster.skill1Monster = s1.idSkill JOIN skill s2 ON monster.skill2Monster = s2.idSkill WHERE monster.User_idUser = ?";
+            String query = "SELECT monster.idMonster AS 'id', monster.nameMonster AS 'name', monster.hpMonster AS 'hpmonsters', monster.manaMonster AS 'mana', monster.attackMonster AS 'att', monster.deffendMonster AS 'deff',monster.skill1Monster as 'idSkill1', s1.skillName AS 'skill1',monster.skill2Monster as 'idSkill2', s2.skillName AS 'skill2',monster.User_idUser AS 'idUser', user.nameUser AS 'owner',monster.Element_idElement1 AS 'idElement1', e1.nameElement AS 'element1',monster.Element_idElement2 AS 'idElement2', e2.nameElement AS 'element2', s1.elementalMastery AS 'mastery1', s2.elementalMastery AS 'mastery2' FROM monster JOIN user ON monster.User_idUser = user.idUser JOIN element e1 ON monster.Element_idElement1 = e1.idElement JOIN element e2 ON monster.Element_idElement2 = e2.idElement JOIN skill s1 ON monster.skill1Monster = s1.idSkill JOIN skill s2 ON monster.skill2Monster = s2.idSkill";
             PreparedStatement statement;
             statement = JDBCConnection.getConnection().prepareStatement(query);
             statement.setInt(1, data);
@@ -110,7 +112,9 @@ public class DaoMonster implements DaoInterface<Monsters>{
                 String element2 = result.getString("element2");
                 String skill1 = result.getString("skill1");
                 String skill2 = result.getString("skill2");
-                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2,idSkill1,idSkill2,idElement1,idElement2);
+                int mastery1 = result.getInt("mastery1");
+                int mastery2 = result.getInt("mastery2");
+                Monsters mo = new Monsters(name,hpmonsters,mana,att,deff,idUser,owner,element1,element2,skill1,skill2,idSkill1,idSkill2,idElement1,idElement2,mastery1,mastery2);
                 Monsters mon = new Monsters(id,mo);
                 monsList.add(mon);
             }

@@ -17,8 +17,10 @@ public class Monsters {
     private String elementName2;
     private String skill1;
     private String skill2;
+    private int mastery1;
+    private int mastery2;
 
-    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster,int idUser, String userName, String elementName1, String elementName2, String skill1, String skill2, int idSkill1, int idSkill2, int idElement1, int idElement2) {
+    public Monsters(String nameMonster, int hpMonster, int manaMonster, int attMonster, int defMonster,int idUser, String userName, String elementName1, String elementName2, String skill1, String skill2, int idSkill1, int idSkill2, int idElement1, int idElement2, int mastery1, int mastery2) {
         this.nameMonster = nameMonster;
         this.hpMonster = hpMonster;
         this.manaMonster = manaMonster;
@@ -34,6 +36,8 @@ public class Monsters {
         this.idSkill2 = idSkill2;
         this.idElement1 = idElement1;
         this.idElement2 = idElement2;
+        this.mastery1 = mastery1;
+        this.mastery2 = mastery2;
 
     }
 
@@ -54,6 +58,8 @@ public class Monsters {
         this.setIdSkill2(monsters.getIdSkill2());
         this.setIdElement1(monsters.getIdElement1());
         this.setIdElement2(monsters.getIdElement2());
+        this.setMastery1(monsters.getMastery1());
+        this.setMastery2(monsters.getMastery2());
     }
 
 
@@ -75,6 +81,8 @@ public class Monsters {
         this.setIdSkill2(monsters.getIdSkill2());
         this.setIdElement1(monsters.getIdElement1());
         this.setIdElement2(monsters.getIdElement2());
+        this.setMastery1(monsters.getMastery1());
+        this.setMastery2(monsters.getMastery2());
     }
 
 
@@ -212,5 +220,21 @@ public class Monsters {
 
     public void setIdElement2(int idElement2) {
         this.idElement2 = idElement2;
+    }
+
+    public int getMastery1() {
+        return mastery1;
+    }
+
+    public void setMastery1(int mastery1) {
+        this.mastery1 = mastery1;
+    }
+
+    public int getMastery2() {
+        return mastery2;
+    }
+
+    public void setMastery2(int mastery2) {
+        this.mastery2 = mastery2;
     }
 }
