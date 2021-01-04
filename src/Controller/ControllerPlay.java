@@ -189,8 +189,341 @@ public class ControllerPlay {
                     case "Ice":
                         multipler=0.5;
                         break;
-
+                    case "Wind":
+                        multipler=0.5;
+                        break;
+                    case "Ground":
+                        multipler=2;
+                        break;
+                    case "Steel":
+                        multipler=2;
+                        break;
+                    case "Poison":
+                        multipler=1;
+                        break;
+                    case "Light":
+                        multipler=0.5;
+                        break;
+                    case "Dark":
+                        multipler=1;
+                        break;
                 }
+                break;
+
+            case "Fire":
+                switch (elementDef){
+                    case "Water":
+                        multipler=0.5;
+                        break;
+                    case "Fire":
+                        multipler=1;
+                        break;
+                    case "Thunder":
+                        multipler=2;
+                        break;
+                    case "Ice":
+                        multipler=2;
+                        break;
+                    case "Wind":
+                        multipler=0.5;
+                        break;
+                    case "Ground":
+                        multipler=0.5;
+                        break;
+                    case "Steel":
+                        multipler=0.5;
+                        break;
+                    case "Poison":
+                        multipler=2;
+                        break;
+                    case "Light":
+                        multipler=2;
+                        break;
+                    case "Dark":
+                        multipler=1;
+                        break;
+                }
+                break;
+
+            case "Thunder":
+                switch (elementDef){
+                    case "Water":
+                        multipler=2;
+                        break;
+                    case "Fire":
+                        multipler=0.5;
+                        break;
+                    case "Thunder":
+                        multipler=1;
+                        break;
+                    case "Ice":
+                        multipler=1;
+                        break;
+                    case "Wind":
+                        multipler=0.5;
+                        break;
+                    case "Ground":
+                        multipler=0.5;
+                        break;
+                    case "Steel":
+                        multipler=2;
+                        break;
+                    case "Poison":
+                        multipler=2;
+                        break;
+                    case "Light":
+                        multipler=1;
+                        break;
+                    case "Dark":
+                        multipler=1;
+                        break;
+                }
+                break;
+
+            case "Ice":
+                switch (elementDef){
+                    case "Water":
+                        multipler=1;
+                        break;
+                    case "Fire":
+                        multipler=0.5;
+                        break;
+                    case "Thunder":
+                        multipler=0.5;
+                        break;
+                    case "Ice":
+                        multipler=1;
+                        break;
+                    case "Wind":
+                        multipler=2;
+                        break;
+                    case "Ground":
+                        multipler=2;
+                        break;
+                    case "Steel":
+                        multipler=1;
+                        break;
+                    case "Poison":
+                        multipler=0.5;
+                        break;
+                    case "Light":
+                        multipler=1;
+                        break;
+                    case "Dark":
+                        multipler=2;
+                        break;
+                }
+                break;
+
+            case "Wind":
+                switch (elementDef){
+                    case "Water":
+                        multipler=2;
+                        break;
+                    case "Fire":
+                        multipler=2;
+                        break;
+                    case "Thunder":
+                        multipler=2;
+                        break;
+                    case "Ice":
+                        multipler=1;
+                        break;
+                    case "Wind":
+                        multipler=1;
+                        break;
+                    case "Ground":
+                        multipler=1;
+                        break;
+                    case "Steel":
+                        multipler=0.5;
+                        break;
+                    case "Poison":
+                        multipler=1;
+                        break;
+                    case "Light":
+                        multipler=0.5;
+                        break;
+                    case "Dark":
+                        multipler=0.5;
+                        break;
+                }
+                break;
+
+            case "Ground":
+                switch (elementDef){
+                    case "Water":
+                        multipler=0.5;
+                        break;
+                    case "Fire":
+                        multipler=2;
+                        break;
+                    case "Thunder":
+                        multipler=2;
+                        break;
+                    case "Ice":
+                        multipler=1;
+                        break;
+                    case "Wind":
+                        multipler=1;
+                        break;
+                    case "Ground":
+                        multipler=1;
+                        break;
+                    case "Steel":
+                        multipler=2;
+                        break;
+                    case "Poison":
+                        multipler=0.5;
+                        break;
+                    case "Light":
+                        multipler=1;
+                        break;
+                    case "Dark":
+                        multipler=0.5;
+                        break;
+                }
+                break;
+
+            case "Steel":
+                switch (elementDef){
+                    case "Water":
+                        multipler=1;
+                        break;
+                    case "Fire":
+                        multipler=1;
+                        break;
+                    case "Thunder":
+                        multipler=1;
+                        break;
+                    case "Ice":
+                        multipler=2;
+                        break;
+                    case "Wind":
+                        multipler=2;
+                        break;
+                    case "Ground":
+                        multipler=2;
+                        break;
+                    case "Steel":
+                        multipler=1;
+                        break;
+                    case "Poison":
+                        multipler=0.5;
+                        break;
+                    case "Light":
+                        multipler=0.5;
+                        break;
+                    case "Dark":
+                        multipler=0.5;
+                        break;
+                }
+                break;
+
+            case "Poison":
+                switch (elementDef){
+                    case "Water":
+                        multipler=2;
+                        break;
+                    case "Fire":
+                        multipler=1;
+                        break;
+                    case "Thunder":
+                        multipler=0.5;
+                        break;
+                    case "Ice":
+                        multipler=1;
+                        break;
+                    case "Wind":
+                        multipler=1;
+                        break;
+                    case "Ground":
+                        multipler=0.5;
+                        break;
+                    case "Steel":
+                        multipler=0.5;
+                        break;
+                    case "Poison":
+                        multipler=1;
+                        break;
+                    case "Light":
+                        multipler=2;
+                        break;
+                    case "Dark":
+                        multipler=2;
+                        break;
+                }
+                break;
+
+            case "Light":
+                switch (elementDef){
+                    case "Water":
+                        multipler=1;
+                        break;
+                    case "Fire":
+                        multipler=0.5;
+                        break;
+                    case "Thunder":
+                        multipler=0.5;
+                        break;
+                    case "Ice":
+                        multipler=2;
+                        break;
+                    case "Wind":
+                        multipler=1;
+                        break;
+                    case "Ground":
+                        multipler=0.5;
+                        break;
+                    case "Steel":
+                        multipler=1;
+                        break;
+                    case "Poison":
+                        multipler=2;
+                        break;
+                    case "Light":
+                        multipler=1;
+                        break;
+                    case "Dark":
+                        multipler=2;
+                        break;
+                }
+                break;
+
+            case "Dark":
+                switch (elementDef){
+                    case "Water":
+                        multipler=0.5;
+                        break;
+                    case "Fire":
+                        multipler=0.5;
+                        break;
+                    case "Thunder":
+                        multipler=2;
+                        break;
+                    case "Ice":
+                        multipler=0.5;
+                        break;
+                    case "Wind":
+                        multipler=2;
+                        break;
+                    case "Ground":
+                        multipler=1;
+                        break;
+                    case "Steel":
+                        multipler=1;
+                        break;
+                    case "Poison":
+                        multipler=1;
+                        break;
+                    case "Light":
+                        multipler=2;
+                        break;
+                    case "Dark":
+                        multipler=1;
+                        break;
+                }
+                break;
         }
     }
 }
