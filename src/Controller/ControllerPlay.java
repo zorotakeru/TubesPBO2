@@ -83,13 +83,21 @@ public class ControllerPlay {
                 System.out.println("Choose your monster");
             }
         }
-
-        System.out.println(mList.get(mIndex).getHpMonster());
-        System.out.println(mEList.get(mEIndex).getHpMonster());
     }
 
     public void actSkill1(ActionEvent actionEvent) {
+        if(!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
+            if (mIndex != 9999) {
+                if (mEIndex != 9999) {
 
+                }
+                else {
+                    System.out.println("Choose enemy monster");
+                }
+            } else {
+                System.out.println("Choose your monster");
+            }
+        }
     }
 
     public void actSkill2(ActionEvent actionEvent) {

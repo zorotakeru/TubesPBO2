@@ -36,6 +36,8 @@ public class ControllerMons {
     public TableColumn<Monsters, String> colSkill2;
     public TableColumn<Monsters, String> colOwner;
     public Button btnBack;
+    public TableColumn<Monsters, String> colSkillCost1;
+    public TableColumn<Monsters, String> colSkillCost2;
     ObservableList<Monsters> monList;
 
     public void initialize() {
@@ -52,6 +54,8 @@ public class ControllerMons {
         colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
         colSkill1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill1"));
         colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
+        colSkillCost1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("mastery1"));
+        colSkillCost2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("mastery2"));
     }
 
     public void actBack(ActionEvent actionEvent) {
@@ -90,7 +94,7 @@ public class ControllerMons {
 
         DaoMonster daoMonster = new DaoMonster();
         if(!addMons.addnamamonsterfield.getText().equals("") && addMons.ownercmbbox.getValue() != null) {
-            int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "", skill1, skill2, element1, element2));
+            int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "", skill1, skill2, element1, element2,0,0  ));
 
             if (result != 0) {
                 System.out.println("Insert Character Berhasil");

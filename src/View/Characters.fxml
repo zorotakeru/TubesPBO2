@@ -16,10 +16,9 @@
       </Label>
       <TableView fx:id="tblChar" layoutX="64.0" layoutY="81.0" prefHeight="224.0" prefWidth="472.0">
         <columns>
-          <TableColumn fx:id="colCharName" prefWidth="210.39996337890625" text="Name" />
-          <TableColumn fx:id="colCharLevel" prefWidth="70.4000244140625" text="Level" />
-            <TableColumn fx:id="colCharXP" prefWidth="63.199951171875" text="Total XP" />
-            <TableColumn fx:id="colTotalMonsters" prefWidth="127.20001220703125" text="Total Monsters" />
+          <TableColumn fx:id="colCharName" prefWidth="234.4000244140625" text="Name" />
+          <TableColumn fx:id="colCharLevel" prefWidth="112.79998779296875" text="Level" />
+            <TableColumn fx:id="colTotalMonsters" prefWidth="125.60003662109375" text="Total Monsters" />
         </columns>
       </TableView>
       <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />

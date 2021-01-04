@@ -26,6 +26,8 @@
                 <TableColumn fx:id="colSkill1" text="Skill 1" />
                 <TableColumn fx:id="colSkill2" text="Skill 2" />
                 <TableColumn fx:id="colOwner" text="Owner" />
+            <TableColumn fx:id="colSkillCost1" prefWidth="75.0" text="SkillCost1" />
+            <TableColumn fx:id="colSkillCost2" prefWidth="75.0" text="SkillCost2" />
             </columns>
         </TableView>
         <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
