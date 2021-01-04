@@ -1,6 +1,5 @@
 package Controller;
 
-import DAO.DaoMonster;
 import Model.Monsters;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -8,8 +7,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
-import java.lang.invoke.SwitchPoint;
 
 public class ControllerPlay {
 
@@ -31,6 +28,8 @@ public class ControllerPlay {
     public Label enemyElement1;
     public Label enemyElement2;
     public TextArea areaInfo;
+    public Label costS1;
+    public Label costS2;
     ObservableList<Monsters> mList = FXCollections.observableArrayList();
     ObservableList<Monsters> mEList = FXCollections.observableArrayList();
 
@@ -56,7 +55,7 @@ public class ControllerPlay {
     public void actAttack(ActionEvent actionEvent) {
         int countP;
         int countE;
-        if(!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
+        if (!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
             if (mIndex != 9999) {
                 if (mEIndex != 9999) {
                     countP = mList.get(mIndex).getHpMonster() - (mEList.get(mEIndex).getAttMonster() - (mList.get(mIndex).getDefMonster() / 50));
@@ -88,22 +87,95 @@ public class ControllerPlay {
     }
 
     public void actSkill1(ActionEvent actionEvent) {
-        if(!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
+        double mMastery = skillEff(mList.get(mIndex).getSkill1(), mEList.get(mEIndex).getSkill1());
+        double mEMastery = skillEff(mEList.get(mEIndex).getSkill1(), mList.get(mIndex).getSkill1());
+        int countP;
+        int countE;
+
+        if (!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
             if (mIndex != 9999) {
                 if (mEIndex != 9999) {
+                    countP = (int) (mList.get(mIndex).getHpMonster() - ((mEList.get(mEIndex).getMastery1() * mEMastery) - (mList.get(mIndex).getDefMonster() / 50)));
+                    countE = (int) (mEList.get(mEIndex).getHpMonster() - ((mList.get(mIndex).getMastery1() * mMastery) - (mEList.get(mEIndex).getDefMonster() / 50)));
+                    if (mEList.get(mEIndex).getMastery1() <= mEList.get(mEIndex).getManaMonster()) {
+                        if (countP < 0) {
+                            mList.get(mIndex).setHpMonster(0);
+                        } else {
+                            mList.get(mIndex).setHpMonster(countP);
+                        }
+                        mEList.get(mEIndex).setManaMonster(mEList.get(mEIndex).getManaMonster() - mEList.get(mEIndex).getMastery1());
+                    } else {
+                        System.out.println("Enemy mana is not enough");
+                    }
 
-                }
-                else {
+                    if (mList.get(mIndex).getMastery1() <= mList.get(mIndex).getManaMonster()) {
+                        if (countE < 0) {
+                            mEList.get(mEIndex).setHpMonster(0);
+                        } else {
+                            mEList.get(mEIndex).setHpMonster(countE);
+                        }
+                        mList.get(mIndex).setManaMonster(mList.get(mIndex).getManaMonster() - mList.get(mIndex).getMastery1());
+                    } else {
+                        System.out.println("Your mana is not enough for this skill");
+                    }
+                } else {
                     System.out.println("Choose enemy monster");
                 }
             } else {
                 System.out.println("Choose your monster");
             }
+            enemyList.setItems(mEList);
+            monsterList.setItems(mList);
+
+            updateP(mList.get(mIndex));
+            updateE(mEList.get(mEIndex));
         }
     }
 
     public void actSkill2(ActionEvent actionEvent) {
+        double mMastery = skillEff(mList.get(mIndex).getSkill2(), mEList.get(mEIndex).getSkill1());
+        double mEMastery = skillEff(mEList.get(mEIndex).getSkill2(), mList.get(mIndex).getSkill1());
+        int countP;
+        int countE;
 
+        if (!monsterHp.getText().equals("DIED") && !enemyHp.getText().equals("DIED")) {
+            if (mIndex != 9999) {
+                if (mEIndex != 9999) {
+                    countP = (int) (mList.get(mIndex).getHpMonster() - ((mEList.get(mEIndex).getMastery2() * mEMastery) - (mList.get(mIndex).getDefMonster() / 50)));
+                    countE = (int) (mEList.get(mEIndex).getHpMonster() - ((mList.get(mIndex).getMastery2() * mMastery) - (mEList.get(mEIndex).getDefMonster() / 50)));
+                    if (mEList.get(mEIndex).getMastery2() <= mEList.get(mEIndex).getManaMonster()) {
+                        if (countP < 0) {
+                            mList.get(mIndex).setHpMonster(0);
+                        } else {
+                            mList.get(mIndex).setHpMonster(countP);
+                        }
+                        mEList.get(mEIndex).setManaMonster(mEList.get(mEIndex).getManaMonster() - mEList.get(mEIndex).getMastery1());
+                    } else {
+                        System.out.println("Enemy mana is not enough");
+                    }
+
+                    if (mList.get(mIndex).getMastery2() <= mList.get(mIndex).getManaMonster()) {
+                        if (countE < 0) {
+                            mEList.get(mEIndex).setHpMonster(0);
+                        } else {
+                            mEList.get(mEIndex).setHpMonster(countE);
+                        }
+                        mList.get(mIndex).setManaMonster(mList.get(mIndex).getManaMonster() - mList.get(mIndex).getMastery1());
+                    } else {
+                        System.out.println("Your mana is not enough for this skill");
+                    }
+                } else {
+                    System.out.println("Choose enemy monster");
+                }
+            } else {
+                System.out.println("Choose your monster");
+            }
+            enemyList.setItems(mEList);
+            monsterList.setItems(mList);
+
+            updateP(mList.get(mIndex));
+            updateE(mEList.get(mEIndex));
+        }
     }
 
     public void selectMonster() {
@@ -139,6 +211,8 @@ public class ControllerPlay {
             monsterElement2.setText(m.getElementName2());
             btnSkill1.setText(m.getSkill1());
             btnSkill2.setText(m.getSkill2());
+            costS1.setText(Integer.toString(m.getMastery1()));
+            costS2.setText(Integer.toString(m.getMastery2()));
 
 
         } else {
@@ -172,358 +246,359 @@ public class ControllerPlay {
         }
     }
 
-    public void skillEff(String elementAtt,String elementDef){
-        double multipler;
-        switch (elementAtt){
+    public double skillEff(String elementAtt, String elementDef) {
+        double multipler = 0;
+        switch (elementAtt) {
             case "Water":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Fire":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Thunder":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ice":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Wind":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ground":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Steel":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Poison":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Light":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Dark":
-                        multipler=1;
+                        multipler = 1;
                         break;
                 }
                 break;
 
             case "Fire":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Fire":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Thunder":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ice":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Wind":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ground":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Steel":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Poison":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Light":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Dark":
-                        multipler=1;
+                        multipler = 1;
                         break;
                 }
                 break;
 
             case "Thunder":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Fire":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Thunder":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ice":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Wind":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ground":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Steel":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Poison":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Light":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Dark":
-                        multipler=1;
+                        multipler = 1;
                         break;
                 }
                 break;
 
             case "Ice":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Fire":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Thunder":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ice":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Wind":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ground":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Steel":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Poison":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Light":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Dark":
-                        multipler=2;
+                        multipler = 2;
                         break;
                 }
                 break;
 
             case "Wind":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Fire":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Thunder":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ice":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Wind":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ground":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Steel":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Poison":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Light":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Dark":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                 }
                 break;
 
             case "Ground":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Fire":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Thunder":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ice":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Wind":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ground":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Steel":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Poison":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Light":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Dark":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                 }
                 break;
 
             case "Steel":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Fire":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Thunder":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ice":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Wind":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ground":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Steel":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Poison":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Light":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Dark":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                 }
                 break;
 
             case "Poison":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Fire":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Thunder":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ice":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Wind":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ground":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Steel":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Poison":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Light":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Dark":
-                        multipler=2;
+                        multipler = 2;
                         break;
                 }
                 break;
 
             case "Light":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Fire":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Thunder":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Ice":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Wind":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Ground":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Steel":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Poison":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Light":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Dark":
-                        multipler=2;
+                        multipler = 2;
                         break;
                 }
                 break;
 
             case "Dark":
-                switch (elementDef){
+                switch (elementDef) {
                     case "Water":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Fire":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Thunder":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ice":
-                        multipler=0.5;
+                        multipler = 0.5;
                         break;
                     case "Wind":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Ground":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Steel":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Poison":
-                        multipler=1;
+                        multipler = 1;
                         break;
                     case "Light":
-                        multipler=2;
+                        multipler = 2;
                         break;
                     case "Dark":
-                        multipler=1;
+                        multipler = 1;
                         break;
                 }
                 break;
         }
+        return multipler;
     }
 }

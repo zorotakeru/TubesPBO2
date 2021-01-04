@@ -60,8 +60,10 @@ public class ControllerFace {
 
         DaoMonster daoMonster = new DaoMonster();
 
+
         monList = daoMonster.showDetail(comboCharacter.getSelectionModel().getSelectedItem().getIdChar());
         tblMonster.setItems(monList);
+
         colMonsterName.setCellValueFactory(new PropertyValueFactory<Monsters, String>("nameMonster"));
         colElementPri.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName1"));
         colElemetSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
