@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.lang.invoke.SwitchPoint;
+
 public class ControllerPlay {
 
     public ListView<Monsters> monsterList;
@@ -167,6 +169,28 @@ public class ControllerPlay {
             enemyDefend.setText("DIED");
             enemyElement1.setText("DIED");
             enemyElement2.setText("DIED");
+        }
+    }
+
+    public void skillEff(String elementAtt,String elementDef){
+        double multipler;
+        switch (elementAtt){
+            case "Water":
+                switch (elementDef){
+                    case "Water":
+                        multipler=1;
+                        break;
+                    case "Fire":
+                        multipler=2;
+                        break;
+                    case "Thunder":
+                        multipler=1;
+                        break;
+                    case "Ice":
+                        multipler=0.5;
+                        break;
+
+                }
         }
     }
 }
