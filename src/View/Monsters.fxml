@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMons">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMons">
     <children>
         <Label layoutX="176.0" layoutY="27.0" text="YOUR MONSTERS">
             <font>
                 <Font size="28.0" />
             </font>
         </Label>
-        <TableView fx:id="tblMons" layoutX="64.0" layoutY="81.0" prefHeight="224.0" prefWidth="472.0">
+        <TableView fx:id="tblMons" layoutX="64.0" layoutY="81.0" prefHeight="224.0" prefWidth="472.0" style="-fx-background-color: #add8e6;">
             <columns>
                 <TableColumn fx:id="colmMonsName" prefWidth="210.39996337890625" text="Monster Name" />
                 <TableColumn fx:id="colElementPri" text="Element Pri" />
@@ -30,7 +30,13 @@
             <TableColumn fx:id="colSkillCost2" prefWidth="75.0" text="SkillCost2" />
             </columns>
         </TableView>
-        <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
-        <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddMons" prefHeight="26.0" prefWidth="472.0" text="Add Monster" />
+        <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+        <Button layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddMons" prefHeight="26.0" prefWidth="472.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Add Monster" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
     </children>
 </AnchorPane>
