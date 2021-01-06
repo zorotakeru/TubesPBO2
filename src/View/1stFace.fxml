@@ -16,7 +16,7 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboCharacter" layoutX="95.0" layoutY="76.0" onAction="#actCmbChar" prefHeight="26.0" prefWidth="412.0" />
+      <ComboBox style="-fx-background-radius: 10; -fx-border-color: #f4a460; -fx-border-radius: 10;" fx:id="comboCharacter" layoutX="95.0" layoutY="76.0" onAction="#actCmbChar" prefHeight="26.0" prefWidth="412.0" />
       <TableView fx:id="tblMonster" layoutX="95.0" layoutY="146.0" prefHeight="238.0" prefWidth="254.0">
         <columns>
           <TableColumn fx:id="colMonsterName" prefWidth="99.20001220703125" text="Monster" />
@@ -24,14 +24,14 @@
             <TableColumn fx:id="colElemetSec" prefWidth="78.4" text="Element Sec" />
         </columns>
       </TableView>
-      <Button fx:id="btnFight" layoutX="362.0" layoutY="146.0" mnemonicParsing="false" onAction="#actFight" prefHeight="62.0" prefWidth="144.0" text="GO!">
+      <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" fx:id="btnFight" layoutX="362.0" layoutY="146.0" mnemonicParsing="false" onAction="#actFight" prefHeight="62.0" prefWidth="144.0" text="GO!">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
       <Label layoutX="171.0" layoutY="117.0" prefHeight="18.0" prefWidth="102.0" text="Available Monsters" />
       <Label layoutX="386.0" layoutY="117.0" text="READY TO FIGHT?" />
-      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
       <ImageView fitHeight="162.0" fitWidth="144.0" layoutX="362.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

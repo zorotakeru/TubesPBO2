@@ -6,24 +6,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerFace2">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerFace2">
    <children>
       <Label layoutX="130.0" layoutY="29.0" text="CHOOSE YOUR MONSTERS">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboM1" layoutX="225.0" layoutY="98.0" onAction="#actCmbM1" prefHeight="26.0" prefWidth="243.0" />
+      <ComboBox fx:id="comboM1" layoutX="225.0" layoutY="98.0" onAction="#actCmbM1" prefHeight="26.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-color: #f4a460; -fx-border-radius: 10;" />
       <Label layoutX="130.0" layoutY="103.0" text="Monster 1" />
-      <ComboBox fx:id="comboM2" layoutX="226.0" layoutY="173.0" onAction="#actCmbM2" prefHeight="26.0" prefWidth="243.0" />
+      <ComboBox fx:id="comboM2" layoutX="226.0" layoutY="173.0" onAction="#actCmbM2" prefHeight="26.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-color: #f4a460; -fx-border-radius: 10;" />
       <Label layoutX="131.0" layoutY="178.0" text="Monster 2" />
-      <ComboBox fx:id="comboM3" layoutX="225.0" layoutY="252.0" onAction="#actCmbM3" prefHeight="26.0" prefWidth="243.0" />
+      <ComboBox fx:id="comboM3" layoutX="225.0" layoutY="252.0" onAction="#actCmbM3" prefHeight="26.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-color: #f4a460; -fx-border-radius: 10;" />
       <Label layoutX="130.0" layoutY="257.0" text="Monster 3" />
-      <Button fx:id="btnfight" layoutX="130.0" layoutY="309.0" mnemonicParsing="false" onAction="#actfight" prefHeight="54.0" prefWidth="339.0" text="FIGHT">
+      <Button fx:id="btnfight" layoutX="130.0" layoutY="309.0" mnemonicParsing="false" onAction="#actfight" prefHeight="54.0" prefWidth="339.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="FIGHT">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Back" />
    </children>
 </AnchorPane>

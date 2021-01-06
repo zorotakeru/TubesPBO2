@@ -30,7 +30,7 @@
             <TableColumn fx:id="colSkillCost2" prefWidth="75.0" text="SkillCost2" />
             </columns>
         </TableView>
-        <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
-        <Button layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddMons" prefHeight="26.0" prefWidth="472.0" text="Add Monster" />
+        <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" text="Back" />
+        <Button style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" layoutX="64.0" layoutY="331.0" mnemonicParsing="false" onAction="#actAddMons" prefHeight="26.0" prefWidth="472.0" text="Add Monster" />
     </children>
 </AnchorPane>
