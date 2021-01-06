@@ -3,14 +3,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenu">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="145.0" layoutY="56.0" mnemonicParsing="false" onAction="#actPlay" prefHeight="26.0" prefWidth="309.0" text="PLAY" />
-      <Button layoutX="144.0" layoutY="158.0" mnemonicParsing="false" onAction="#actListMons" prefHeight="26.0" prefWidth="310.0" text="Monsters" />
-      <Button layoutX="145.0" layoutY="107.0" mnemonicParsing="false" onAction="#actListChar" prefHeight="26.0" prefWidth="310.0" text="Characters" />
-      <Button fx:id="btnExit" layoutX="144.0" layoutY="307.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" text="Exit" />
-      <Button layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#actLogFile" text="Log File" />
+      <Button layoutX="145.0" layoutY="56.0" mnemonicParsing="false" onAction="#actPlay" prefHeight="26.0" prefWidth="309.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="PLAY" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button layoutX="144.0" layoutY="158.0" mnemonicParsing="false" onAction="#actListMons" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Monsters" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button layoutX="145.0" layoutY="107.0" mnemonicParsing="false" onAction="#actListChar" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Characters" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnExit" layoutX="144.0" layoutY="307.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Exit" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#actLogFile" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Log File" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>
