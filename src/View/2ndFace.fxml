@@ -19,11 +19,14 @@
       <Label layoutX="131.0" layoutY="178.0" text="Monster 2" />
       <ComboBox fx:id="comboM3" layoutX="225.0" layoutY="252.0" onAction="#actCmbM3" prefHeight="26.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-color: #f4a460; -fx-border-radius: 10;" />
       <Label layoutX="130.0" layoutY="257.0" text="Monster 3" />
-      <Button fx:id="btnfight" layoutX="130.0" layoutY="309.0" mnemonicParsing="false" onAction="#actfight" prefHeight="54.0" prefWidth="339.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="FIGHT">
+      <Button fx:id="btnfight" layoutX="130.0" layoutY="309.0" mnemonicParsing="false" onAction="#actfight" prefHeight="54.0" prefWidth="339.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="FIGHT" textFill="WHITE">
          <font>
-            <Font size="28.0" />
+            <Font name="Arial Black" size="28.0" />
          </font>
       </Button>
-      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Back" />
+      <Button fx:id="btnBack" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#actBack" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>
