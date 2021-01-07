@@ -16,8 +16,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
+import Class.*;
 import java.io.IOException;
+import java.util.Date;
 
 public class ControllerFace {
     public ComboBox<Characters> comboCharacter;
@@ -28,6 +29,8 @@ public class ControllerFace {
     public Button btnBack;
     public ObservableList<Monsters> monList;
     public Button btnFight;
+    IOClass io = new IOClass();
+    Date date=java.util.Calendar.getInstance().getTime();
 
     public void initialize(){
         DaoCharacter cDao = new DaoCharacter();
@@ -49,11 +52,14 @@ public class ControllerFace {
         cf2.comboM3.setItems(monList);
 
         stage.showAndWait();
+        io.history("User just Goin to FIGHT at "+date);
     }
 
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
+        io.history("User just a chicken and leaving the battle at "+date);
+
     }
 
     public void actCmbChar(ActionEvent actionEvent) {

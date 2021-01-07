@@ -1,11 +1,10 @@
 package Controller;
 
-import DAO.DaoCharacter;
+
 import DAO.DaoElement;
 import DAO.DaoMonster;
 import DAO.DaoSkill;
 import Main.Main;
-import Model.Characters;
 import Model.Elements;
 import Model.Monsters;
 import Model.Skills;
@@ -17,11 +16,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
+import Class.*;
 import java.io.IOException;
+import java.util.Date;
 
 public class ControllerMons {
     public TableView<Monsters> tblMons;
@@ -39,6 +38,9 @@ public class ControllerMons {
     public TableColumn<Monsters, String> colSkillCost1;
     public TableColumn<Monsters, String> colSkillCost2;
     ObservableList<Monsters> monList;
+    IOClass io = new IOClass();
+    Date date=java.util.Calendar.getInstance().getTime();
+
 
     public void initialize() {
         DaoMonster daoMonster = new DaoMonster();
@@ -61,6 +63,7 @@ public class ControllerMons {
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
+        io.history("User just Back from monsters page at "+date);
     }
 
     public void actAddMons(ActionEvent actionEvent) throws IOException {
@@ -94,13 +97,14 @@ public class ControllerMons {
 
         DaoMonster daoMonster = new DaoMonster();
         if(!addMons.addnamamonsterfield.getText().equals("") && addMons.ownercmbbox.getValue() != null) {
-            int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "", skill1, skill2, element1, element2,0,0  ));
+            int result = daoMonster.addData(new Monsters(addMons.addnamamonsterfield.getText(), getRandomNumber(100, 2000), getRandomNumber(100, 500 + addMons.ownercmbbox.getSelectionModel().getSelectedItem().getLevel()), getRandomNumber(50, 200), getRandomNumber(100, 1000), addMons.ownercmbbox.getSelectionModel().getSelectedItem().getIdChar(), "", "", "", "", "", skill1, skill2, element1, element2,0,0  ));
 
             if (result != 0) {
                 System.out.println("Insert Character Berhasil");
             }
             ObservableList<Monsters> mList = daoMonster.showData();
             tblMons.setItems(mList);
+            io.history("User just add a monster with name "+addMons.addnamamonsterfield.getText()+" at " +date);
         }
     }
 

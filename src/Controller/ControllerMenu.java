@@ -7,11 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import Class.*;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 public class ControllerMenu {
     public Button btnExit;
+    IOClass io = new IOClass();
+    Date date=java.util.Calendar.getInstance().getTime();
 
     public void actPlay(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
@@ -20,6 +25,7 @@ public class ControllerMenu {
         stage.setTitle("Let's Play");
         stage.setScene(new Scene(root));
         stage.showAndWait();
+        io.history("User just press Play Button at "+date);
     }
 
     public void actListMons(ActionEvent actionEvent) throws IOException {
@@ -29,6 +35,7 @@ public class ControllerMenu {
         stage.setTitle("Monsters");
         stage.setScene(new Scene(root));
         stage.showAndWait();
+        io.history("User just press Monster Button to see all Monsters at "+date);
     }
 
     public void actListChar(ActionEvent actionEvent) throws IOException {
@@ -38,14 +45,18 @@ public class ControllerMenu {
         stage.setTitle("Characters");
         stage.setScene(new Scene(root));
         stage.showAndWait();
+        io.history("User just press Character Button to see all Characters at "+date);
     }
 
     public void actExit(ActionEvent actionEvent) {
         Stage stage = (Stage) btnExit.getScene().getWindow();
-        stage.close();
+        stage.close();io.history("User just press Exit Button and it's time to rest and the time is "+date);
     }
 
     public void actLogFile(ActionEvent actionEvent) {
-
+        io.history("User just press Log Button to see Me!? at"+date);
     }
+
+
+
 }
