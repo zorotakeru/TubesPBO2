@@ -246,6 +246,12 @@ public class ControllerPlay {
         }
     }
 
+    public void winLose(ObservableList<Monsters> list1,ObservableList<Monsters> list2){
+        if(list1.get(0).getHpMonster() <= 0 && list1.get(1).getHpMonster() <= 0 && list1.get(2).getHpMonster() <= 0){
+
+        }
+    }
+
     public double skillEff(String elementAtt, String elementDef) {
         double multipler = 0;
         switch (elementAtt) {

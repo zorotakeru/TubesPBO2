@@ -14,8 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
-
+import Class.*;
 import java.io.IOException;
+import java.util.Date;
 
 public class ControllerFace2 {
     public ComboBox<Monsters> comboM1;
@@ -26,6 +27,8 @@ public class ControllerFace2 {
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
     ObservableList<Characters> cEList= FXCollections.observableArrayList();
     ObservableList<Monsters> mEList= FXCollections.observableArrayList();
+    IOClass io = new IOClass();
+    Date date=java.util.Calendar.getInstance().getTime();
 
     public void initialize(){
         comboM2.setDisable(true);
@@ -49,11 +52,13 @@ public class ControllerFace2 {
 
         CP.mEList.addAll(mEList);
         stage.showAndWait();
+        io.history("User just JOIN THE BATTLE ROOM at "+date);
     }
 
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
+        io.history("User just a chicken and choosing another player at "+date);
     }
 
     public void actCmbM1(ActionEvent actionEvent) {

@@ -10,6 +10,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import Class.*;
+import java.util.Date;
 
 public class ControllerChar {
     public TableView<Characters> tblChar;
@@ -18,6 +20,8 @@ public class ControllerChar {
     public TableColumn<Characters, String> colTotalMonsters;
     public Button btnBack;
     ObservableList<Characters> cList;
+    IOClass io = new IOClass();
+    Date date=java.util.Calendar.getInstance().getTime();
 
     public void initialize(){
         DaoCharacter daoCharacter = new DaoCharacter();
@@ -31,6 +35,7 @@ public class ControllerChar {
     public void actBack(ActionEvent actionEvent) {
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
+        io.history("User just Back from characters page at "+date);
     }
 
     public void actAddChar(ActionEvent actionEvent) {
@@ -47,6 +52,8 @@ public class ControllerChar {
             }
             ObservableList<Characters> cList = daoCharacter.showData();
             tblChar.setItems(cList);
+            io.history("User just add a character with name "+dialog.getEditor().getText()+" at "+date);
         }
+
     }
 }
