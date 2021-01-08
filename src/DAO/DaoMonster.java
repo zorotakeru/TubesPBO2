@@ -124,4 +124,9 @@ public class DaoMonster implements DaoInterface<Monsters>{
         }
         return monsList;
     }
+
+    @Override
+    public int updateData(int data) {
+        return 0;
+    }
 }

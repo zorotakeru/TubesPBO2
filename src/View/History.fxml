@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerHistory">
+   <children>
+      <GridPane layoutX="1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="76.60001220703126" minHeight="0.0" prefHeight="35.20001220703125" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="374.8" minHeight="10.0" prefHeight="351.99998779296874" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="128.60001220703128" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="historyArea" prefHeight="367.0" prefWidth="300.0" GridPane.rowIndex="1" />
+            <TextArea fx:id="battleArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="304.0" text="History" textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="312.0" text="Battle Log" textAlignment="CENTER" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

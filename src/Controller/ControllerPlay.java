@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.DaoCharacter;
 import Model.Monsters;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -7,7 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
+import javafx.stage.Stage;
+import Class.*;
 public class ControllerPlay {
 
     public ListView<Monsters> monsterList;
@@ -32,9 +34,10 @@ public class ControllerPlay {
     public Label costS2;
     ObservableList<Monsters> mList = FXCollections.observableArrayList();
     ObservableList<Monsters> mEList = FXCollections.observableArrayList();
-
+    IOClass io = new IOClass();
     int mIndex = 9999;
     int mEIndex = 9999;
+
 
     public void initialize() {
 
@@ -50,6 +53,9 @@ public class ControllerPlay {
         enemyMana.setEditable(false);
         enemyAttack.setEditable(false);
         enemyDefend.setEditable(false);
+
+
+
     }
 
     public void actAttack(ActionEvent actionEvent) {
@@ -72,14 +78,12 @@ public class ControllerPlay {
                         mEList.get(mEIndex).setHpMonster(countE);
                     }
 
-                    enemyList.setItems(mEList);
-                    monsterList.setItems(mList);
+
 
                     areaInfo.appendText(mList.get(mIndex).getNameMonster() + " attack with " + mList.get(mIndex).getAttMonster() + " damage" + "\n");
                     areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " attack with " + mEList.get(mEIndex).getAttMonster() + " damage" + "\n");
 
-                    updateP(mList.get(mIndex));
-                    updateE(mEList.get(mEIndex));
+
 
 
                 } else {
@@ -89,6 +93,11 @@ public class ControllerPlay {
                 System.out.println("Choose your monster");
             }
         }
+        enemyList.setItems(mEList);
+        monsterList.setItems(mList);
+        updateP(mList.get(mIndex));
+        updateE(mEList.get(mEIndex));
+        winLose(mList,mEList);
     }
 
     public void actSkill1(ActionEvent actionEvent) {
@@ -109,6 +118,7 @@ public class ControllerPlay {
                             mList.get(mIndex).setHpMonster(countP);
                         }
                         mEList.get(mEIndex).setManaMonster(mEList.get(mEIndex).getManaMonster() - mEList.get(mEIndex).getMastery1());
+                        areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " cast " + mEList.get(mEIndex).getSkill1() + "\n");
                     } else {
                         System.out.println("Enemy mana is not enough");
                     }
@@ -120,15 +130,10 @@ public class ControllerPlay {
                             mEList.get(mEIndex).setHpMonster(countE);
                         }
                         mList.get(mIndex).setManaMonster(mList.get(mIndex).getManaMonster() - mList.get(mIndex).getMastery1());
+                        areaInfo.appendText(mList.get(mIndex).getNameMonster() + " cast " + mList.get(mIndex).getSkill1() + "\n");
                     } else {
                         System.out.println("Your mana is not enough for this skill");
                     }
-
-
-                    areaInfo.appendText(mList.get(mIndex).getNameMonster() + " cast " + mList.get(mIndex).getSkill1() + "\n");
-                    areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " cast " + mEList.get(mEIndex).getSkill1() + "\n");
-
-
                 } else {
                     System.out.println("Choose enemy monster");
                 }
@@ -137,9 +142,9 @@ public class ControllerPlay {
             }
             enemyList.setItems(mEList);
             monsterList.setItems(mList);
-
             updateP(mList.get(mIndex));
             updateE(mEList.get(mEIndex));
+            winLose(mList,mEList);
         }
     }
 
@@ -161,6 +166,7 @@ public class ControllerPlay {
                             mList.get(mIndex).setHpMonster(countP);
                         }
                         mEList.get(mEIndex).setManaMonster(mEList.get(mEIndex).getManaMonster() - mEList.get(mEIndex).getMastery1());
+                        areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " cast " + mEList.get(mEIndex).getSkill2() + "\n");
                     } else {
                         System.out.println("Enemy mana is not enough");
                     }
@@ -172,12 +178,13 @@ public class ControllerPlay {
                             mEList.get(mEIndex).setHpMonster(countE);
                         }
                         mList.get(mIndex).setManaMonster(mList.get(mIndex).getManaMonster() - mList.get(mIndex).getMastery1());
+                        areaInfo.appendText(mList.get(mIndex).getNameMonster() + " cast " + mList.get(mIndex).getSkill2() + "\n");
                     } else {
                         System.out.println("Your mana is not enough for this skill");
                     }
 
-                    areaInfo.appendText(mList.get(mIndex).getNameMonster() + " cast " + mList.get(mIndex).getSkill2() + "\n");
-                    areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " cast " + mEList.get(mEIndex).getSkill2() + "\n");
+
+
 
                 } else {
                     System.out.println("Choose enemy monster");
@@ -187,9 +194,9 @@ public class ControllerPlay {
             }
             enemyList.setItems(mEList);
             monsterList.setItems(mList);
-
             updateP(mList.get(mIndex));
             updateE(mEList.get(mEIndex));
+            winLose(mList,mEList);
         }
     }
 
@@ -200,6 +207,7 @@ public class ControllerPlay {
                 updateP(newValue);
                 mIndex = monsterList.getSelectionModel().getSelectedIndex();
                 System.out.println(mIndex);
+
             }
         });
     }
@@ -228,6 +236,9 @@ public class ControllerPlay {
             btnSkill2.setText(m.getSkill2());
             costS1.setText(Integer.toString(m.getMastery1()));
             costS2.setText(Integer.toString(m.getMastery2()));
+            btnSkill1.setDisable(false);
+            btnSkill2.setDisable(false);
+            btnAttack.setDisable(false);
 
 
         } else {
@@ -239,6 +250,10 @@ public class ControllerPlay {
             monsterElement2.setText("DIED");
             btnSkill1.setText("DIED");
             btnSkill2.setText("DIED");
+            btnSkill1.setDisable(true);
+            btnSkill2.setDisable(true);
+            btnAttack.setDisable(true);
+            areaInfo.appendText(mList.get(mIndex).getNameMonster() + " DIED " + "\n");
         }
     }
 
@@ -250,6 +265,9 @@ public class ControllerPlay {
             enemyDefend.setText(Integer.toString(mE.getDefMonster()));
             enemyElement1.setText(mE.getElementName1());
             enemyElement2.setText(mE.getElementName2());
+            btnSkill1.setDisable(false);
+            btnSkill2.setDisable(false);
+            btnAttack.setDisable(false);
 
         } else {
             enemyHp.setText("DIED");
@@ -258,14 +276,37 @@ public class ControllerPlay {
             enemyDefend.setText("DIED");
             enemyElement1.setText("DIED");
             enemyElement2.setText("DIED");
+            btnSkill1.setDisable(true);
+            btnSkill2.setDisable(true);
+            btnAttack.setDisable(true);
+            areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " DIED " + "\n");
         }
     }
 
     public void winLose(ObservableList<Monsters> list1,ObservableList<Monsters> list2){
-        if(list1.get(0).getHpMonster() <= 0 && list1.get(1).getHpMonster() <= 0 && list1.get(2).getHpMonster() <= 0){
+
+        if(list2.get(0).getHpMonster() <= 0 && list2.get(1).getHpMonster() <= 0 && list2.get(2).getHpMonster() <= 0){
+            areaInfo.appendText("WIN" + "\n");
+            DaoCharacter cDao = new DaoCharacter();
+            cDao.updateData(list1.get(0).getIdUser());
+            io.save(areaInfo);
+            btnSkill1.setDisable(true);
+            btnSkill2.setDisable(true);
+            btnAttack.setDisable(true);
+
 
         }
+        else if(list1.get(0).getHpMonster() <= 0 && list1.get(1).getHpMonster() <= 0 && list1.get(2).getHpMonster() <= 0){
+            areaInfo.appendText("LOSE" + "\n");
+            io.save(areaInfo);
+            btnSkill1.setDisable(true);
+            btnSkill2.setDisable(true);
+            btnAttack.setDisable(true);
+        }
+
+
     }
+
 
     public double skillEff(String elementAtt, String elementDef) {
         double multipler = 0;
