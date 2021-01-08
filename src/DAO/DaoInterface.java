@@ -6,4 +6,5 @@ public interface DaoInterface<E> {
     public List<E> showData();
     public int addData(E data);
     public List<E> showDetail(int data);
+    public int updateData(int data);
 }

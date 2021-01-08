@@ -53,6 +53,9 @@ public class ControllerFace2 {
         CP.mEList.addAll(mEList);
         stage.showAndWait();
         io.history("User just JOIN THE BATTLE ROOM at "+date);
+
+        Stage stage1 = (Stage) btnBack.getScene().getWindow();
+        stage1.close();
     }
 
     public void actBack(ActionEvent actionEvent) {

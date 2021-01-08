@@ -53,7 +53,13 @@ public class ControllerMenu {
         stage.close();io.history("User just press Exit Button and it's time to rest and the time is "+date);
     }
 
-    public void actLogFile(ActionEvent actionEvent) {
+    public void actLogFile(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../View/History.fxml"));
+        Parent root = loader.load();
+        stage.setTitle("History");
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
         io.history("User just press Log Button to see Me!? at"+date);
     }
 

@@ -68,4 +68,9 @@ public class DaoSkill implements DaoInterface<Skills> {
         return skList;
 
     }
+
+    @Override
+    public int updateData(int data) {
+        return 0;
+    }
 }

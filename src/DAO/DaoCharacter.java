@@ -87,4 +87,30 @@ public class DaoCharacter implements DaoInterface<Characters>{
         }
         return chList;
     }
+
+    @Override
+    public int updateData(int data) {
+        int result = 0;
+
+        try {
+            String query ="UPDATE user SET Level = Level + 1 WHERE idUser = (?)";
+            Connection conn = JDBCConnection.getConnection();
+            conn.setAutoCommit(false);
+            PreparedStatement statement;
+            statement = conn.prepareStatement(query);
+            statement.setInt(1, data);
+
+            result = statement.executeUpdate();
+            if (result != 0){
+                conn.commit();
+            }
+            else {
+                conn.rollback();
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception);
+        }
+
+        return result;
+    }
 }

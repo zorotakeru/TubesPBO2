@@ -53,4 +53,9 @@ public class DaoElement implements DaoInterface<Elements> {
     public ObservableList showDetail(int data) {
         return null;
     }
+
+    @Override
+    public int updateData(int data) {
+        return 0;
+    }
 }

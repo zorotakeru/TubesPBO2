@@ -1,6 +1,9 @@
 package Class;
 
+import javafx.scene.control.TextArea;
+
 import java.io.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class IOClass {
@@ -28,5 +31,16 @@ public class IOClass {
             System.out.println(e.getMessage());
         }
         System.out.println(fill);
+    }
+
+    public void save(TextArea a){
+        String path = "src/IO/HistoryGame.txt";
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+            writer.write(a.getText());
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
