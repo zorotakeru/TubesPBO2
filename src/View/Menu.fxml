@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenu">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgBG" fitHeight="405.0" fitWidth="605.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="145.0" layoutY="56.0" mnemonicParsing="false" onAction="#actPlay" prefHeight="26.0" prefWidth="309.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="PLAY" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="13.0" />

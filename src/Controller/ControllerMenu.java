@@ -6,17 +6,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
 import java.io.*;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 public class ControllerMenu {
     public Button btnExit;
+    public ImageView imgBG;
     IOClass io = new IOClass();
     Date date=java.util.Calendar.getInstance().getTime();
+
+    public void initialize(){
+        imgBG.setImage(new Image("Img/bgMonster.jpg"));
+    }
 
     public void actPlay(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
