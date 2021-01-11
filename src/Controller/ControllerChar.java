@@ -9,6 +9,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
 import java.util.Date;
@@ -19,6 +21,7 @@ public class ControllerChar {
     public TableColumn<Characters, String> colCharLevel;
     public TableColumn<Characters, String> colTotalMonsters;
     public Button btnBack;
+    public ImageView imgBG;
     ObservableList<Characters> cList;
     IOClass io = new IOClass();
     Date date=java.util.Calendar.getInstance().getTime();
@@ -30,6 +33,7 @@ public class ControllerChar {
         colCharName.setCellValueFactory(new PropertyValueFactory<Characters, String>("nameUser"));
         colCharLevel.setCellValueFactory(new PropertyValueFactory<Characters, String>("level"));
         colTotalMonsters.setCellValueFactory(new PropertyValueFactory<Characters, String>("totalMonster"));
+        imgBG.setImage(new Image("Img/bgMonster.jpg"));
     }
 
     public void actBack(ActionEvent actionEvent) {

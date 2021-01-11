@@ -27,7 +27,7 @@ public class ControllerFace {
     public TableView <Monsters> tblMonster;
     public TableColumn <Monsters,String> colMonsterName;
     public TableColumn <Monsters,String> colElementPri;
-    public TableColumn <Monsters,String> colElemetSec;
+    public TableColumn <Monsters,String> colElementSec;
     public Button btnBack;
     public ObservableList<Monsters> monList;
     public Button btnFight;
@@ -71,16 +71,14 @@ public class ControllerFace {
     }
 
     public void actCmbChar(ActionEvent actionEvent) {
-
         DaoMonster daoMonster = new DaoMonster();
-
 
         monList = daoMonster.showDetail(comboCharacter.getSelectionModel().getSelectedItem().getIdChar());
         tblMonster.setItems(monList);
 
         colMonsterName.setCellValueFactory(new PropertyValueFactory<Monsters, String>("nameMonster"));
         colElementPri.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName1"));
-        colElemetSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
+        colElementSec.setCellValueFactory(new PropertyValueFactory<Monsters, String>("elementName2"));
         btnFight.setDisable(false);
     }
 }
