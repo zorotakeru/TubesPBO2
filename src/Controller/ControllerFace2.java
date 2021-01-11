@@ -13,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
 import java.io.IOException;
@@ -24,6 +26,7 @@ public class ControllerFace2 {
     public ComboBox<Monsters> comboM3;
     public Button btnfight;
     public Button btnBack;
+    public ImageView imgBG;
     ObservableList<Monsters> mList= FXCollections.observableArrayList();
     ObservableList<Characters> cEList= FXCollections.observableArrayList();
     ObservableList<Monsters> mEList= FXCollections.observableArrayList();
@@ -34,6 +37,12 @@ public class ControllerFace2 {
         comboM2.setDisable(true);
         comboM3.setDisable(true);
         btnfight.setDisable(true);
+        imgBG.setImage(new Image("Img/bgMonster.jpg"));
+
+        ImageView iv =  new ImageView(new Image("Img/fire.png") );
+        iv.setFitHeight(20);
+        iv.setFitWidth(20);
+        btnfight.setGraphic(iv);
     }
 
     public void actfight(ActionEvent actionEvent) throws IOException {
