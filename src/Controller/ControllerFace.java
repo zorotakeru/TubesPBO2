@@ -15,6 +15,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
 import java.io.IOException;
@@ -29,10 +31,16 @@ public class ControllerFace {
     public Button btnBack;
     public ObservableList<Monsters> monList;
     public Button btnFight;
+    public ImageView imgBG;
     IOClass io = new IOClass();
     Date date=java.util.Calendar.getInstance().getTime();
 
     public void initialize(){
+        ImageView iv =  new ImageView(new Image("Img/sword.png") );
+        iv.setFitHeight(20);
+        iv.setFitWidth(20);
+        btnFight.setGraphic(iv);
+        imgBG.setImage(new Image("Img/bgMonster.jpg"));
         DaoCharacter cDao = new DaoCharacter();
         ObservableList<Characters> cList = cDao.showData();
         comboCharacter.setItems(cList);
