@@ -20,11 +20,11 @@
          <font>
             <Font name="Arial Black" size="13.0" />
          </font></Button>
-      <Button fx:id="btnExit" layoutX="144.0" layoutY="307.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Exit" textFill="WHITE">
+      <Button fx:id="btnExit" layoutX="144.0" layoutY="300.0" mnemonicParsing="false" onAction="#actExit" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: #B03A2E; -fx-background-radius: 30; -fx-border-color: #E74C3C; -fx-border-width: 3; -fx-border-radius: 30;" text="Exit" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font></Button>
-      <Button layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onAction="#actLogFile" style="-fx-background-color: #6a5acd; -fx-background-radius: 30; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Log File" textFill="WHITE">
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#actLogFile" style="-fx-background-color: #2980B9; -fx-background-radius: 30; -fx-border-color: #AED6F1; -fx-border-width: 3; -fx-border-radius: 30;" text="Log File" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font></Button>

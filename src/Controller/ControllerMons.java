@@ -17,6 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
 import java.io.IOException;
@@ -37,6 +39,7 @@ public class ControllerMons {
     public Button btnBack;
     public TableColumn<Monsters, String> colSkillCost1;
     public TableColumn<Monsters, String> colSkillCost2;
+    public ImageView imgBG;
     ObservableList<Monsters> monList;
     IOClass io = new IOClass();
     Date date=java.util.Calendar.getInstance().getTime();
@@ -58,6 +61,7 @@ public class ControllerMons {
         colSkill2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("skill2"));
         colSkillCost1.setCellValueFactory(new PropertyValueFactory<Monsters, String>("mastery1"));
         colSkillCost2.setCellValueFactory(new PropertyValueFactory<Monsters, String>("mastery2"));
+        imgBG.setImage(new Image("Img/bgMonster.jpg"));
     }
 
     public void actBack(ActionEvent actionEvent) {

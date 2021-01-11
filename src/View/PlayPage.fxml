@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="554.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerPlay">
    <children>
-      <Button fx:id="btnAttack" layoutX="582.0" layoutY="140.0" mnemonicParsing="false" onAction="#actAttack" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #ff0000; -fx-background-radius: 15;" text="Attack" textFill="WHITE">
+      <Button fx:id="btnAttack" layoutX="582.0" layoutY="140.0" mnemonicParsing="false" onAction="#actAttack" prefHeight="71.0" prefWidth="71.0" style="-fx-background-color: #CB4335; -fx-background-radius: 15; -fx-border-color: #f4a460; -fx-border-width: 3; -fx-border-radius: 30;" text="Attack" textFill="WHITE">
          <font>
             <Font name="Leelawadee UI Bold" size="14.0" />
          </font></Button>
@@ -47,7 +47,7 @@
       <TextField fx:id="monsterAttack" layoutX="326.0" layoutY="140.0" prefHeight="26.0" prefWidth="169.0" />
       <TextField fx:id="monsterDefend" layoutX="326.0" layoutY="183.0" prefHeight="26.0" prefWidth="169.0" />
 
-      <Label alignment="CENTER" layoutX="679.0" layoutY="353.0" text="COM" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="670.0" layoutY="353.0" text="COM">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font></Label>
