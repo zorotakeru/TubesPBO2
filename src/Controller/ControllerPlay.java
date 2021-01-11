@@ -8,8 +8,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Class.*;
+
 public class ControllerPlay {
 
     public ListView<Monsters> monsterList;
@@ -53,9 +56,21 @@ public class ControllerPlay {
         enemyMana.setEditable(false);
         enemyAttack.setEditable(false);
         enemyDefend.setEditable(false);
+        attackButton();
 
 
+    }
 
+    public void attackButton() {
+        ImageView iv = new ImageView(new Image("Img/skill1.png"));
+        iv.setFitHeight(20);
+        iv.setFitWidth(20);
+        btnSkill1.setGraphic(iv);
+
+        ImageView iv1 = new ImageView(new Image("Img/skill2.png"));
+        iv1.setFitHeight(20);
+        iv1.setFitWidth(20);
+        btnSkill2.setGraphic(iv1);
     }
 
     public void actAttack(ActionEvent actionEvent) {
@@ -79,11 +94,8 @@ public class ControllerPlay {
                     }
 
 
-
                     areaInfo.appendText(mList.get(mIndex).getNameMonster() + " attack with " + mList.get(mIndex).getAttMonster() + " damage" + "\n");
                     areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " attack with " + mEList.get(mEIndex).getAttMonster() + " damage" + "\n");
-
-
 
 
                 } else {
@@ -97,7 +109,7 @@ public class ControllerPlay {
         monsterList.setItems(mList);
         updateP(mList.get(mIndex));
         updateE(mEList.get(mEIndex));
-        winLose(mList,mEList);
+        winLose(mList, mEList);
     }
 
     public void actSkill1(ActionEvent actionEvent) {
@@ -144,7 +156,7 @@ public class ControllerPlay {
             monsterList.setItems(mList);
             updateP(mList.get(mIndex));
             updateE(mEList.get(mEIndex));
-            winLose(mList,mEList);
+            winLose(mList, mEList);
         }
     }
 
@@ -184,8 +196,6 @@ public class ControllerPlay {
                     }
 
 
-
-
                 } else {
                     System.out.println("Choose enemy monster");
                 }
@@ -196,7 +206,7 @@ public class ControllerPlay {
             monsterList.setItems(mList);
             updateP(mList.get(mIndex));
             updateE(mEList.get(mEIndex));
-            winLose(mList,mEList);
+            winLose(mList, mEList);
         }
     }
 
@@ -283,9 +293,9 @@ public class ControllerPlay {
         }
     }
 
-    public void winLose(ObservableList<Monsters> list1,ObservableList<Monsters> list2){
+    public void winLose(ObservableList<Monsters> list1, ObservableList<Monsters> list2) {
 
-        if(list2.get(0).getHpMonster() <= 0 && list2.get(1).getHpMonster() <= 0 && list2.get(2).getHpMonster() <= 0){
+        if (list2.get(0).getHpMonster() <= 0 && list2.get(1).getHpMonster() <= 0 && list2.get(2).getHpMonster() <= 0) {
             areaInfo.appendText("WIN" + "\n");
             DaoCharacter cDao = new DaoCharacter();
             cDao.updateData(list1.get(0).getIdUser());
@@ -295,8 +305,7 @@ public class ControllerPlay {
             btnAttack.setDisable(true);
 
 
-        }
-        else if(list1.get(0).getHpMonster() <= 0 && list1.get(1).getHpMonster() <= 0 && list1.get(2).getHpMonster() <= 0){
+        } else if (list1.get(0).getHpMonster() <= 0 && list1.get(1).getHpMonster() <= 0 && list1.get(2).getHpMonster() <= 0) {
             areaInfo.appendText("LOSE" + "\n");
             io.save(areaInfo);
             btnSkill1.setDisable(true);
