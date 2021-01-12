@@ -35,6 +35,7 @@ public class ControllerPlay {
     public TextArea areaInfo;
     public Label costS1;
     public Label costS2;
+    public ImageView imgBG;
     ObservableList<Monsters> mList = FXCollections.observableArrayList();
     ObservableList<Monsters> mEList = FXCollections.observableArrayList();
     IOClass io = new IOClass();
@@ -56,12 +57,12 @@ public class ControllerPlay {
         enemyMana.setEditable(false);
         enemyAttack.setEditable(false);
         enemyDefend.setEditable(false);
-        attackButton();
+        img();
 
 
     }
 
-    public void attackButton() {
+    public void img() {
         ImageView iv = new ImageView(new Image("Img/skill1.png"));
         iv.setFitHeight(20);
         iv.setFitWidth(20);
@@ -71,6 +72,8 @@ public class ControllerPlay {
         iv1.setFitHeight(20);
         iv1.setFitWidth(20);
         btnSkill2.setGraphic(iv1);
+
+        imgBG.setImage(new Image("Img/bgPlay.jpg"));
     }
 
     public void actAttack(ActionEvent actionEvent) {
