@@ -99,7 +99,11 @@ public class ControllerPlay {
 
                     areaInfo.appendText(mList.get(mIndex).getNameMonster() + " attack with " + mList.get(mIndex).getAttMonster() + " damage" + "\n");
                     areaInfo.appendText(mEList.get(mEIndex).getNameMonster() + " attack with " + mEList.get(mEIndex).getAttMonster() + " damage" + "\n");
-
+                    enemyList.setItems(mEList);
+                    monsterList.setItems(mList);
+                    updateP(mList.get(mIndex));
+                    updateE(mEList.get(mEIndex));
+                    winLose(mList, mEList);
 
                 } else {
                     System.out.println("Choose enemy monster");
@@ -108,11 +112,7 @@ public class ControllerPlay {
                 System.out.println("Choose your monster");
             }
         }
-        enemyList.setItems(mEList);
-        monsterList.setItems(mList);
-        updateP(mList.get(mIndex));
-        updateE(mEList.get(mEIndex));
-        winLose(mList, mEList);
+
     }
 
     public void actSkill1(ActionEvent actionEvent) {
@@ -149,17 +149,18 @@ public class ControllerPlay {
                     } else {
                         System.out.println("Your mana is not enough for this skill");
                     }
+                    enemyList.setItems(mEList);
+                    monsterList.setItems(mList);
+                    updateP(mList.get(mIndex));
+                    updateE(mEList.get(mEIndex));
+                    winLose(mList, mEList);
                 } else {
                     System.out.println("Choose enemy monster");
                 }
             } else {
                 System.out.println("Choose your monster");
             }
-            enemyList.setItems(mEList);
-            monsterList.setItems(mList);
-            updateP(mList.get(mIndex));
-            updateE(mEList.get(mEIndex));
-            winLose(mList, mEList);
+
         }
     }
 
@@ -197,7 +198,11 @@ public class ControllerPlay {
                     } else {
                         System.out.println("Your mana is not enough for this skill");
                     }
-
+                    enemyList.setItems(mEList);
+                    monsterList.setItems(mList);
+                    updateP(mList.get(mIndex));
+                    updateE(mEList.get(mEIndex));
+                    winLose(mList, mEList);
 
                 } else {
                     System.out.println("Choose enemy monster");
@@ -205,11 +210,7 @@ public class ControllerPlay {
             } else {
                 System.out.println("Choose your monster");
             }
-            enemyList.setItems(mEList);
-            monsterList.setItems(mList);
-            updateP(mList.get(mIndex));
-            updateE(mEList.get(mEIndex));
-            winLose(mList, mEList);
+
         }
     }
 

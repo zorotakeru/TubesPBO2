@@ -18,7 +18,7 @@ public class DaoCharacter implements DaoInterface<Characters>{
     public ObservableList<Characters> showData() {
         ObservableList<Characters> chList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT user.idUser,user.nameUser,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser GROUP BY user.idUser,user.nameUser,user.Point,user.Level";
+            String query = "SELECT user.idUser,user.nameUser,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser GROUP BY user.idUser,user.nameUser,user.Level";
             PreparedStatement statement;
             statement = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet result= statement.executeQuery();
@@ -67,7 +67,7 @@ public class DaoCharacter implements DaoInterface<Characters>{
     public ObservableList<Characters> showDetail(int data) {
         ObservableList<Characters> chList = FXCollections.observableArrayList();
         try {
-            String query = "SELECT user.idUser,user.nameUser,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser WHERE user.idUser = ? GROUP BY user.idUser,user.nameUser,user.Point,user.Level";
+            String query = "SELECT user.idUser,user.nameUser,user.Level,COUNT(monster.User_idUser) AS 'totalMonster' FROM user LEFT OUTER JOIN monster ON user.idUser = monster.User_idUser WHERE user.idUser = ? GROUP BY user.idUser,user.nameUser,user.Level";
             PreparedStatement statement;
             statement = JDBCConnection.getConnection().prepareStatement(query);
             statement.setInt(1, data);

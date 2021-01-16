@@ -1,22 +1,61 @@
-MAJItenshi attack with 199 damage
-John attack with 71 damage
-MAJItenshi attack with 199 damage
-John attack with 71 damage
-MAJItenshi attack with 199 damage
-John attack with 71 damage
-MAJItenshi attack with 199 damage
-John attack with 71 damage
-John DIED 
-MAJItenshi attack with 199 damage
 Faith attack with 72 damage
-MAJItenshi attack with 199 damage
+Andrew Seed attack with 88 damage
 Faith attack with 72 damage
-MAJItenshi attack with 199 damage
+Andrew Seed attack with 88 damage
 Faith attack with 72 damage
-MAJItenshi attack with 199 damage
+Andrew Seed attack with 88 damage
 Faith attack with 72 damage
+Andrew Seed attack with 88 damage
+Faith attack with 72 damage
+Andrew Seed attack with 88 damage
+Faith attack with 72 damage
+Andrew Seed attack with 88 damage
+Faith attack with 72 damage
+Andrew Seed attack with 88 damage
+Faith attack with 72 damage
+Andrew Seed attack with 88 damage
+Faith attack with 72 damage
+Andrew Seed attack with 88 damage
 Faith DIED 
-MAJItenshi attack with 199 damage
-Father attack with 158 damage
-Father DIED 
-WIN
+Faith DIED 
+Faith DIED 
+Faith DIED 
+Faith DIED 
+Faith DIED 
+Faith DIED 
+Faith DIED 
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John attack with 71 damage
+Andrew Seed attack with 88 damage
+John DIED 
+John DIED 
+John DIED 
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob attack with 58 damage
+Andrew Seed attack with 88 damage
+Jacob DIED 
+LOSE
